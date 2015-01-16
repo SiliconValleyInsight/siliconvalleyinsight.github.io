@@ -11,64 +11,84 @@ layout: index
 
 </header>
 
-<div class="home-content">
-
-  <div class="tagline">
-    <section>
-      <h2>
-        Web build software that connects
-        people content and ideas.
-      </h2>
-    </section>
-  </div>
-
-  <div class="about">
-    <section class="team">
-      <div class="text">
-        <h3>Our Team</h3>
-        <p>A team of Android devs, iOS devs, interaction designers, and data
-        scientists.</p>
-        <p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur
-        tempor orci penatibus.</p>
-      </div>
-    </section>
-    <section class="experience">
-      <div class="text">
-        <h3>Our Experience</h3>
-        <p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur
-        tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus
-        eget. Nunc nibh morbi quis fusce lacus.</p>
-      </div>
-    </section>
-    <section class="projects">
-      <div class="text">
-        <h3>Our Projects</h3>
-        <ul>
-          <li>Android + iOS Development</li>
-          <li>Interaction & Data Driven Web Apps</li>
-          <li>Data Science + Data Viz</li>
-        </ul>
-      </div>
-    </section>
-  </div>
-
-  <div class="blog">
-    <h2>Blog</h2>
-
-    <ul class="post-list">
-      {% for post in site.posts %}
-        <li>
-          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-          <h2>
-            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-          </h2>
-        </li>
-      {% endfor %}
-    </ul>
-
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-  </div>
-
+<div class="tagline">
+  <section>
+    <h2>
+      Web build software that connects
+      people content and ideas.
+    </h2>
+  </section>
 </div>
+
+<div class="about">
+  <section class="team">
+    <div class="text">
+      <h3>Our Team</h3>
+      <p>A team of Android devs, iOS devs, interaction designers, and data
+      scientists.</p>
+      <p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur
+      tempor orci penatibus.</p>
+    </div>
+  </section>
+  <section class="experience">
+    <div class="text">
+      <h3>Our Experience</h3>
+      <p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur
+      tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus
+      eget. Nunc nibh morbi quis fusce lacus.</p>
+    </div>
+  </section>
+  <section class="projects">
+    <div class="text">
+      <h3>Our Projects</h3>
+      <ul>
+        <li>Android + iOS Development</li>
+        <li>Interaction & Data Driven Web Apps</li>
+        <li>Data Science + Data Viz</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<div class="contact">
+  <div class="container">
+    <section>
+      <h2>What can we do for <u>you</u>?</h2>
+      <p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur
+      tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus.</p>
+      <div class="form">
+        <div class="details">
+          <div>
+            <p><input type="text" placeholder="Name"></p>
+          </div>
+          <div>
+            <p><input type="text" placeholder="Email"></p>
+          </div>
+        </div>
+        <p><textarea placeholder="Message" rows="10"></textarea></p>
+        <p><button>Send Message</button></p>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="blog">
+  <div class="container">
+    <section>
+      <h2>Blog</h2>
+      <ul class="post-list">
+        {% for post in site.posts %}
+          <li>
+            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+            <h2>
+              <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            </h2>
+          </li>
+        {% endfor %}
+      </ul>
+      <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+    </section>
+  </div>
+</div>
+
