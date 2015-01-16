@@ -59,7 +59,7 @@
         @include row;
         margin-top: 10em;
         section {
-            background: url(http://lorempixel.com/640/480/city) no-repeat right center;
+            background: no-repeat right bottom;
             background-size: 50%;
             height: 20em;
             .text {
@@ -71,9 +71,14 @@
                 }
             }
             &:nth-child(odd) {
-                background-position: left center;
+                background-position: left bottom;
                 .text {
                     @include shift(1 of 2);
+                }
+            }
+            @each $type in team, experience, projects {
+                &.#{$type} {
+                    background-image: url(../images/#{$type}.jpg);
                 }
             }
         }
