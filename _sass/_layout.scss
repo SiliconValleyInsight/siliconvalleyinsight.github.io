@@ -12,7 +12,7 @@
 
 .home-header {
     @include pad;
-    height: 85vh;
+    height: 100vh;
     padding-top: 20vh;
     text-align: center;
     h1 {
@@ -33,6 +33,7 @@
     @include pad;
     .tagline {
         @include row;
+        margin-top: -5em;
         section {
             @include span-columns(1 of 2);
             @include shift(1 / 2);
