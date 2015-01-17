@@ -15,122 +15,158 @@ body {
     border-bottom: 1px $light-gray solid;
 }
 
-.home-header {
-    @include pad;
-    height: 100vh;
-    padding-top: 20vh;
-    text-align: center;
-    h1 {
-        font-family: Muli, sans-serif;
-        font-weight: 200;
-        text-transform: uppercase;
-        line-height: 1;
-        margin-bottom: 1em;
-        letter-spacing: 0.2em;
-    }
-    .locations {
-        color: $medium-gray;
-    }
-}
-
-.tagline {
-    @include outer-container;
-    margin-top: -2em;
-    section {
-        @include span-columns(4);
-        @include shift(4);
+.home {
+    header {
         @include pad;
-        background: white;
-        border: 1px $light-gray solid;
-        font-size: 0.8em;
+        height: 100vh;
         text-align: center;
         position: relative;
-        &:after {
-            font-size: 1rem;
-            display: block;
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            content: '';
-            width: 1px;
-            height: 80em;
-            background: $light-gray;
-        }
-    }
-}
-
-.about {
-    @include outer-container;
-    margin-top: 10em;
-    section {
-        background: no-repeat right bottom;
-        background-size: 50%;
-        height: 20em;
-        .text {
-            @include span-columns(6);
-            @include pad;
-            padding-top: 3em;
-            h3 {
-                margin-bottom: 0.5em;
-            }
-        }
-        &:nth-child(odd) {
-            background-position: left bottom;
-            .text {
-                @include shift(6);
-            }
-        }
-        @each $type in team, experience, projects {
-            &.#{$type} {
-                background-image: url(../images/#{$type}.jpg);
-            }
-        }
-    }
-}
-
-.contact {
-    background: $dark-gray;
-    color: white;
-    text-align: center;
-    margin-top: 10em;
-    .container {
-        @include outer-container;
-        @include pad;
         section {
-            @include span-columns(8);
-            @include shift(2);
-            h2 {
-                margin-bottom: 0.5em;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            h1 {
+                font-family: Muli, sans-serif;
+                font-weight: 200;
+                text-transform: uppercase;
+                line-height: 1;
+                margin-bottom: 1em;
+                letter-spacing: 0.2em;
             }
-            .form {
-                margin: 3em 0;
-                .details > div {
-                    @include span-columns(4 of 8);
+            .locations {
+                color: $medium-gray;
+            }
+        }
+    }
+
+    .tagline {
+        @include outer-container;
+        margin-top: -2em;
+        section {
+            @include span-columns(4);
+            @include shift(4);
+            @include pad;
+            background: white;
+            border: 1px $light-gray solid;
+            font-size: 0.8em;
+            text-align: center;
+            position: relative;
+            &:after {
+                font-size: 1rem;
+                display: block;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                content: '';
+                width: 1px;
+                height: 90em;
+                background: $light-gray;
+            }
+        }
+    }
+
+    .about {
+        @include outer-container;
+        margin-top: 10em;
+        section {
+            background: no-repeat right bottom;
+            background-size: 50%;
+            height: 20em;
+            .text {
+                @include span-columns(6);
+                @include pad;
+                padding-top: 3em;
+                h3 {
+                    margin-bottom: 0.5em;
+                }
+            }
+            &:nth-child(odd) {
+                background-position: left bottom;
+                .text {
+                    @include shift(6);
+                }
+            }
+            @each $type in team, experience, projects {
+                &.#{$type} {
+                    background-image: url(../images/#{$type}.jpg);
                 }
             }
         }
     }
-}
 
-.blog {
-    background: $light-gray;
-    padding: {
-        top: 5em;
-        bottom: 5em;
-    }
-    .container {
+    .join {
         @include outer-container;
-        background: white;
-        box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.1);
-        section {
-            @include span-columns(8);
-            @include shift(2);
-            margin: {
-                top: 5em;
-                bottom: 5em;
+        margin-top: 20em;
+        .container {
+            width: 50%;
+            padding-bottom: 50%;
+            border: 1px $light-gray solid;
+            border-radius: 50%;
+            position: relative;
+            margin: 0 auto;
+            section {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 70%;
+                text-align: center;
+                h2 {
+                    margin-bottom: 0.5em;
+                }
+                p {
+                    margin-bottom: 1.5em;
+                }
             }
-            h2 {
-                margin-bottom: 1.5em;
+        }
+    }
+
+    .contact {
+        background: $dark-gray;
+        color: white;
+        text-align: center;
+        margin-top: 10em;
+        padding: 5em 0;
+        .container {
+            @include outer-container;
+            @include pad;
+            section {
+                @include span-columns(8);
+                @include shift(2);
+                h2 {
+                    margin-bottom: 0.5em;
+                }
+                .form {
+                    margin-top: 3em;
+                    .details > div {
+                        @include span-columns(4 of 8);
+                    }
+                }
+            }
+        }
+    }
+
+    .blog {
+        background: $light-gray;
+        padding: {
+            top: 5em;
+            bottom: 5em;
+        }
+        .container {
+            @include outer-container;
+            background: white;
+            box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.1);
+            section {
+                @include span-columns(8);
+                @include shift(2);
+                margin: {
+                    top: 5em;
+                    bottom: 5em;
+                }
+                h2 {
+                    margin-bottom: 1.5em;
+                }
             }
         }
     }
