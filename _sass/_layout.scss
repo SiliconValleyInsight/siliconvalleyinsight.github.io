@@ -60,7 +60,7 @@ body {
                 left: 50%;
                 content: '';
                 width: 1px;
-                height: 90em;
+                height: 160em;
                 background: $light-gray;
             }
         }
@@ -68,11 +68,12 @@ body {
 
     .about {
         @include outer-container;
-        margin-top: 10em;
+        margin-top: 20em;
         section {
             background: no-repeat right bottom;
             background-size: 50%;
             height: 20em;
+            margin-bottom: 20em;
             .text {
                 @include span-columns(6);
                 @include pad;
