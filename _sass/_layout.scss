@@ -91,7 +91,7 @@ body {
                     @include shift(6);
                 }
             }
-            @each $type in specialty, experience, projects {
+            @each $type in team, specialty, projects {
                 &.#{$type} {
                     background-image: url(../images/#{$type}.jpg);
                 }
