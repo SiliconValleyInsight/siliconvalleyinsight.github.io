@@ -91,7 +91,7 @@ body {
                     @include shift(6);
                 }
             }
-            @each $type in team, experience, projects {
+            @each $type in specialty, experience, projects {
                 &.#{$type} {
                     background-image: url(../images/#{$type}.jpg);
                 }
@@ -99,7 +99,7 @@ body {
         }
     }
 
-    .join {
+    .contact {
         @include outer-container;
         margin-top: 20em;
         padding-bottom: 10em;
@@ -127,7 +127,7 @@ body {
         }
     }
 
-    .contact {
+    .join {
         background: $dark-gray;
         color: white;
         text-align: center;
