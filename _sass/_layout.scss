@@ -48,7 +48,7 @@ body {
             @include shift(4);
             @include pad;
             background: white;
-            border: 1px $light-gray solid;
+            border: 1px $medium-gray solid;
             font-size: 0.8em;
             text-align: center;
             position: relative;
@@ -101,7 +101,7 @@ body {
         .container {
             width: 50%;
             padding-bottom: 50%;
-            border: 1px $light-gray solid;
+            border: 1px $medium-gray solid;
             border-radius: 50%;
             position: relative;
             margin: 0 auto;
