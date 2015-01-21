@@ -55,18 +55,6 @@ body {
             border: 1px $medium-gray solid;
             font-size: 0.8em;
             text-align: center;
-            position: relative;
-            &:after {
-                font-size: 1rem;
-                display: block;
-                position: absolute;
-                top: 100%;
-                left: 50%;
-                content: '';
-                width: 1px;
-                height: 130em;
-                background: $light-gray;
-            }
         }
     }
 
