@@ -64,7 +64,7 @@ body {
                 left: 50%;
                 content: '';
                 width: 1px;
-                height: 90em;
+                height: 130em;
                 background: $light-gray;
             }
         }
@@ -72,11 +72,12 @@ body {
 
     .about {
         @include outer-container;
-        margin-top: 10em;
+        margin-top: 20em;
         section {
             background: no-repeat right bottom;
             background-size: 50%;
             height: 20em;
+            margin-bottom: 10em;
             .text {
                 @include span-columns(6);
                 @include pad;
@@ -91,9 +92,12 @@ body {
                     @include shift(6);
                 }
             }
-            @each $type in team, specialty, projects {
-                &.#{$type} {
-                    background-image: url(../images/#{$type}.jpg);
+            &.team { background-image: url(../images/companies.png); }
+            &.projects { background-image: url(../images/stanford-gps-mooc.png); }
+            &.specialty {
+                ul {
+                    list-style: square;
+                    padding-left: 3em;
                 }
             }
         }
