@@ -55,12 +55,21 @@ layout: index
   </section>
 </div>
 
+<div class="interfaces">
+  <div class="bg"></div>
+  <div class="gifs">
+    <div class="container">
+      <section><img src="images/velocity.gif"></section>
+      <section><img src="images/tracker.gif"></section>
+      <section><img src="images/adjustment.gif"></section>
+    </div>
+  </div>
+</div>
+
 <div class="contact">
   <div class="container">
-    <section>
-      <h2>What can we build for <u>you</u>?</h2>
-      <p><button>Start a Conversation</button></p>
-    </section>
+    <h2>What can we build for <u>you</u>?</h2>
+    <p><button>Start a Conversation</button></p>
   </div>
 </div>
 
@@ -84,26 +93,6 @@ layout: index
         <p><textarea placeholder="Message" rows="10"></textarea></p>
         <p><button>Send Message</button></p>
       </div>
-    </section>
-  </div>
-</div>
-
-<div class="blog">
-  <div class="container">
-    <section>
-      <h2>Blog</h2>
-      <ul class="post-list">
-        {% for post in site.posts %}
-          <li>
-            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-            <h2>
-              <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-            </h2>
-          </li>
-        {% endfor %}
-      </ul>
-      <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
     </section>
   </div>
 </div>

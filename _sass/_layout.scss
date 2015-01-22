@@ -55,6 +55,18 @@ body {
             border: 1px $medium-gray solid;
             font-size: 0.8em;
             text-align: center;
+            position: relative;
+            &:after {
+                font-size: 1rem;
+                display: block;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                content: '';
+                width: 1px;
+                height: 35em;
+                background: $light-gray;
+            }
         }
     }
 
@@ -80,8 +92,13 @@ body {
                     @include shift(6);
                 }
             }
-            &.team { background-image: url(../images/companies.png); }
-            &.projects { background-image: url(../images/stanford-gps-mooc.png); }
+            &.team {
+                background-image: url(../images/companies.png);
+            }
+            &.projects {
+                background-image: url(../images/stanford-gps-mooc.png);
+                background-size: 55%;
+            }
             &.specialty {
                 ul {
                     list-style: square;
@@ -91,30 +108,43 @@ body {
         }
     }
 
+    .interfaces {
+        background: black;
+        height: 50em;
+        position: relative;
+        .bg, .gifs {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .gifs {
+            .container {
+                @include outer-container;
+                section {
+                    @include span-columns(4);
+                    height: 50em;
+                    line-height: 50em;
+                    img {
+                        vertical-align: middle;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
     .contact {
-        @include outer-container;
-        margin-top: 5em;
-        padding-bottom: 10em;
+        padding: 10em 0;
         .container {
-            width: 50%;
-            padding-bottom: 50%;
-            border: 1px $medium-gray solid;
-            border-radius: 50%;
-            position: relative;
-            margin: 0 auto;
-            section {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 70%;
-                text-align: center;
-                h2 {
-                    margin-bottom: 0.5em;
-                }
-                p {
-                    margin-bottom: 1.5em;
-                }
+            @include outer-container;
+            text-align: center;
+            h2 {
+                margin-bottom: 0.5em;
+            }
+            p {
+                margin-bottom: 1.5em;
             }
         }
     }
