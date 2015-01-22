@@ -60,12 +60,12 @@ body {
 
     .about {
         @include outer-container;
-        margin-top: 20em;
+        margin-top: 5em;
         section {
             background: no-repeat right bottom;
             background-size: 50%;
             height: 20em;
-            margin-bottom: 10em;
+            margin-bottom: 1em;
             .text {
                 @include span-columns(6);
                 @include pad;
@@ -93,7 +93,7 @@ body {
 
     .contact {
         @include outer-container;
-        margin-top: 20em;
+        margin-top: 5em;
         padding-bottom: 10em;
         .container {
             width: 50%;
