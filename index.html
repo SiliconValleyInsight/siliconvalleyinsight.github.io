@@ -24,6 +24,15 @@ layout: index
 
 <div class="about">
   <div class="container">
+    <section class="team">
+      <div class="text">
+        <h3>Our Team</h3>
+        <p>We're a globally distributed team of Android devs, iOS devs, Python devs, interaction designers, and data
+        scientists.</p>
+         <p>We've worked at Google, Twitter, Samsung, and at some of the
+        most interesting startups in San Francisco and Manila.</p>
+      </div>
+    </section>
     <section class="specialty">
       <div class="text">
         <h3>Our Specialties</h3>
@@ -39,9 +48,29 @@ layout: index
 </div>
 
 <div class="contact">
+  <div class="bg">
+    <canvas id="allergic-bar-chart" resize></canvas>
+  </div>
   <div class="container">
     <h2>What can we build for <u>you</u>?</h2>
     <p><button>Start a Conversation</button></p>
   </div>
 </div>
 
+<script src="//cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.21/paper-full.min.js"></script>
+<script type="text/paperscript" canvas="allergic-bar-chart">
+var bars = [];
+var barWidth = 20;
+var i = 0;
+while (i * barWidth < view.size.width) {
+  var rect = new Rectangle();
+  var x = i * barWidth;
+  var h = view.size.height / 3;
+  rect.size = new Size(10, Math.sin(5 * Math.PI * x / view.size.width) * h / 2 + h);
+  rect.bottomCenter = new Point(x, view.size.height);
+  var bar = new Path.Rectangle(rect);
+  bar.fillColor = 'rgba(0,0,0,0.1)';
+  bars.push(bar);
+  i++;
+}
+</script>
