@@ -51,10 +51,13 @@ body {
             @include shift(3);
             @include pad;
             background: white;
-            border: 1px $light-gray solid;
-            font-size: 0.8em;
+            border: 1px $medium-gray solid;
             text-align: center;
             position: relative;
+            h2 {
+              font-size: 1.5em;
+              margin-bottom: 0.5em;
+            }
         }
     }
 
