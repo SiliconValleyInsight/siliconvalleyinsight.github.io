@@ -49,7 +49,7 @@ layout: index
 
 <div class="contact">
   <div class="bg">
-    <canvas id="allergic-bar-chart" resize></canvas>
+    <canvas id="allergic-bar-chart"></canvas>
   </div>
   <div class="container">
     <h2>What can we build for <u>you</u>?</h2>
@@ -59,18 +59,43 @@ layout: index
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.21/paper-full.min.js"></script>
 <script type="text/paperscript" canvas="allergic-bar-chart">
+var clientRect = view.element.parentNode.getClientRects()[0];
+var vs = new Size(clientRect.width, clientRect.height);
+view.viewSize = vs;
 var bars = [];
 var barWidth = 20;
+var h = view.bounds.height / 4;
 var i = 0;
-while (i * barWidth < view.size.width) {
+while (i * barWidth < view.bounds.width) {
   var rect = new Rectangle();
   var x = i * barWidth;
-  var h = view.size.height / 3;
-  rect.size = new Size(10, Math.sin(5 * Math.PI * x / view.size.width) * h / 2 + h);
-  rect.bottomCenter = new Point(x, view.size.height);
+  rect.size = new Size(10, Math.sin(5 * Math.PI * x / view.bounds.width) * h / 2 + h);
+  rect.bottomCenter = new Point(x, view.bounds.height);
   var bar = new Path.Rectangle(rect);
-  bar.fillColor = 'rgba(0,0,0,0.1)';
+  bar.fillColor = 'dodgerblue';
+  bar.fillColor.hue += i;
+  bar.opacity = 0.1;
+  bar.pivot = rect.bottomCenter;
+  bar.selected = true;
   bars.push(bar);
   i++;
+}
+
+function genBH(bars) {
+  return bars.map(function() {
+    return 0.6 * Math.random() + 0.4;
+  });
+}
+var bh = genBH(bars);
+function onFrame(event) {
+  bars.forEach(function(bar, i) {
+    var dy = bh[i] - bar.scaling.y;
+    var dh = bh[i] * 360 - bar.fillColor.hue;
+    bar.scaling.y += dy / 30;
+    bar.fillColor.hue += dh / 30;
+    if (Math.abs(dy) < 0.001) {
+      bh = genBH(bars);
+    }
+  });
 }
 </script>
