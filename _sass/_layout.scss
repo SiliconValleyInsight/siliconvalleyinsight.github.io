@@ -104,6 +104,12 @@ body {
             text-align: center;
             h2 {
                 margin-bottom: 0.5em;
+                u {
+                    text-decoration: none;
+                    border-bottom: 0.1em solid;
+                    padding: 0 0.1em 0.1em 0.1em;
+                    margin: 0 -0.1em;
+                }
             }
             p {
                 margin-bottom: 1.5em;
