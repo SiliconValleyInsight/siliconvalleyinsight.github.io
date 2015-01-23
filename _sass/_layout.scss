@@ -98,9 +98,22 @@ body {
     }
 
     .contact {
-        padding: 20em 0;
+        position: relative;
+        height: 40em;
+        .bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
         .container {
             @include outer-container;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
             text-align: center;
             h2 {
                 margin-bottom: 0.5em;
