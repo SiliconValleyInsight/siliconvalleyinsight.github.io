@@ -5,17 +5,21 @@ body {
 
 // Home
 
-.home-bg {
+.float {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -15;
+}
+
+.particles {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: -10;
-}
-
-@-webkit-keyframes anim {
-    to { background-position: -119200px; }
 }
 
 .home {
@@ -25,17 +29,11 @@ body {
         height: 100vh;
         text-align: center;
         position: relative;
-        video, section {
+        section {
+            position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-        }
-        video {
-            position: fixed;
-            z-index: -15;
-        }
-        section {
-            position: absolute;
             h1 {
                 font-weight: 200;
                 text-transform: uppercase;
