@@ -16,8 +16,8 @@ body {
 
 .home {
     .content {
+        background: white;
         border-top: 1px $light-gray solid;
-        background: rgba(255, 255, 255, 0.9);
     }
 
     header {
@@ -64,14 +64,14 @@ body {
     .about {
         background: no-repeat right bottom;
         background-image: url(../images/stanford-gps-mooc.png);
-        background-size: 60%;
+        background-size: 900px;
         .container {
             @include outer-container;
             margin-top: 10em;
-            padding: 5em 0;
+            padding-top: 5em;
             section {
                 height: 20em;
-                margin-bottom: 5em;
+                margin-bottom: 3em;
                 .text {
                     @include span-columns(6);
                     @include pad;
@@ -82,7 +82,7 @@ body {
                 }
                 &.team {
                     background: url(../images/companies.png) no-repeat left bottom;
-                    background-size: 50%;
+                    background-size: 500px;
                     .text {
                         @include shift(6);
                     }

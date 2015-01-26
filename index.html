@@ -59,43 +59,49 @@ layout: index
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.21/paper-full.min.js"></script>
 <script type="text/paperscript" canvas="allergic-bar-chart">
-var clientRect = view.element.parentNode.getClientRects()[0];
-var vs = new Size(clientRect.width, clientRect.height);
-view.viewSize = vs;
 var bars = [];
 var barWidth = 20;
-var h = view.bounds.height / 4;
-var i = 0;
-while (i * barWidth < view.bounds.width) {
-  var rect = new Rectangle();
-  var x = i * barWidth;
-  rect.size = new Size(10, Math.sin(5 * Math.PI * x / view.bounds.width) * h / 2 + h);
-  rect.bottomCenter = new Point(x, view.bounds.height);
-  var bar = new Path.Rectangle(rect);
-  bar.fillColor = 'dodgerblue';
-  bar.fillColor.hue += i;
-  bar.opacity = 0.1;
-  bar.pivot = rect.bottomCenter;
-  bar.selected = true;
-  bars.push(bar);
-  i++;
+var gutter = 10;
+function genSY() {
+  return 0.4 * Math.random() + 0.6;
 }
-
-function genBH(bars) {
-  return bars.map(function() {
-    return 0.6 * Math.random() + 0.4;
-  });
+function onWinResize() {
+  var clientRect = view.element.parentNode.getClientRects()[0];
+  var vs = new Size(clientRect.width, clientRect.height);
+  view.viewSize = vs;
 }
-var bh = genBH(bars);
+function onResize() {
+  var i = bars.length;
+  var h = view.bounds.height / 4;
+  while (i * (barWidth + gutter) < view.bounds.width) {
+    var rect = new Rectangle();
+    var x = i * (barWidth + gutter);
+    // FIXME
+    rect.size = new Size(barWidth, Math.sin(5 * Math.PI * x / view.bounds.width) * h / 2 + h);
+    rect.bottomCenter = new Point(x, view.bounds.height);
+    var bar = new Path.Rectangle(rect);
+    bar.fillColor = 'silver';
+    bar.strokeColor = 'black';
+    bar.opacity = 0.1;
+    bar.pivot = rect.bottomCenter;
+    bar.nextScaleY = genSY();
+    bars.push(bar);
+    i = bars.length;
+  }
+  while ((i - 1) * (barWidth + gutter) > view.bounds.width) {
+    bars.pop().remove();
+    i = bars.length;
+  }
+}
 function onFrame(event) {
   bars.forEach(function(bar, i) {
-    var dy = bh[i] - bar.scaling.y;
-    var dh = bh[i] * 360 - bar.fillColor.hue;
+    var dy = bar.nextScaleY - bar.scaling.y;
     bar.scaling.y += dy / 30;
-    bar.fillColor.hue += dh / 30;
-    if (Math.abs(dy) < 0.001) {
-      bh = genBH(bars);
+    if (Math.abs(dy) < 0.01) {
+      bar.nextScaleY = genSY();
     }
   });
 }
+window.onresize = onWinResize;
+onWinResize();
 </script>
