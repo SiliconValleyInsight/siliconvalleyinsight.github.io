@@ -64,8 +64,8 @@ layout: index
 var bars = [];
 var barWidth = 20;
 var gutter = 10;
-function genSY() {
-  return 0.4 * Math.random() + 0.6;
+function genH(bar) {
+  return bar.origHeight - Math.random() * bar.origHeight * 0.25;
 }
 function onWinResize() {
   var clientRect = view.element.parentNode.getClientRects()[0];
@@ -86,7 +86,8 @@ function onResize() {
     bar.strokeColor = 'black';
     bar.opacity = 0.1;
     bar.pivot = rect.bottomCenter;
-    bar.nextScaleY = genSY();
+    bar.origHeight = bar.bounds.height;
+    bar.nextHeight = genH(bar);
     bars.push(bar);
     i = bars.length;
   }
@@ -95,14 +96,41 @@ function onResize() {
     i = bars.length;
   }
 }
-function onFrame(event) {
+var mp = null; // Mouse pointer
+var mv = new Point(0, 0); // Mouse vector
+function onFrame(e) {
   bars.forEach(function(bar, i) {
-    var dy = bar.nextScaleY - bar.scaling.y;
-    bar.scaling.y += dy / 30;
-    if (Math.abs(dy) < 0.01) {
-      bar.nextScaleY = genSY();
+    // Pointer force
+    // strength
+    // * y vector (pull)
+    // / distance from pointer (push)
+    var pf = mp ? (
+      20
+      * -mv.y
+      / mp.getDistance(bar.bounds.topCenter)
+    ) : 0;
+    var dh = bar.nextHeight - bar.bounds.height;
+    var dsy = dh / bar.origHeight + pf;
+    bar.scaling.y += dsy / 30;
+    // Min 1% scale
+    if (bar.scaling.y < 0.01) {
+      bar.scaling.y = 0.01;
+    }
+    // Max to 100% scale
+    if (bar.scaling.y > 1) {
+      bar.scaling.y = 1;
+    }
+    // Random scaling
+    if (Math.abs(dsy) < 0.001) {
+      bar.nextHeight = genH(bar);
     }
   });
+  // Dampen
+  mv /= 30;
+}
+function onMouseMove(e) {
+  mp = e.point;
+  mv += e.delta;
 }
 window.onresize = onWinResize;
 onWinResize();
