@@ -26,16 +26,16 @@ body {
         text-align: center;
         position: relative;
         video, section {
-            position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
         video {
+            position: fixed;
             z-index: -15;
         }
         section {
-            z-index: -5;
+            position: absolute;
             h1 {
                 font-weight: 200;
                 text-transform: uppercase;
@@ -106,7 +106,7 @@ body {
 
     .contact {
         position: relative;
-        height: 50em;
+        height: 100vh;
         .bg {
             position: absolute;
             top: 0;
@@ -119,6 +119,7 @@ body {
             @include outer-container;
             position: absolute;
             top: 50%;
+            transform: translateY(-50%);
             left: 0;
             right: 0;
             text-align: center;
