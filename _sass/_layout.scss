@@ -25,7 +25,7 @@ body {
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            @include transform(translate(-50%, -50%));
             h1 {
                 font-weight: 200;
                 text-transform: uppercase;
@@ -109,7 +109,7 @@ body {
             @include outer-container;
             position: absolute;
             top: 50%;
-            transform: translateY(-50%);
+            @include transform(translateY(-50%));
             left: 0;
             right: 0;
             text-align: center;
