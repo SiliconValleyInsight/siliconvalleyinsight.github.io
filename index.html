@@ -55,16 +55,21 @@ layout: index
     <canvas id="allergic-bar-chart"></canvas>
   </div>
   <div class="container">
-    <section>
+    <section id="form">
       <h2>What can we build for <u>you</u>?</h2>
       <form action="https://formic.marksteve.com/s/c66b7e4c" method="post">
         <div class="info">
           <div><input type="text" name="name" placeholder="Name"></div>
           <div><input type="email" name="email" placeholder="Email"></div>
         </div>
+        <p><input type="text" name="company" placeholder="Company / Organization"></p>
         <p><textarea name="message" placeholder="Message" rows="5"></textarea></p>
         <p><button type="submit">Start a Converstation</button></p>
       </form>
+    </section>
+    <section id="thanks">
+      <h2>Thank you!</h2>
+      <p>We'll get back to you within 48 hours.</p>
     </section>
   </div>
 </div>
@@ -154,6 +159,12 @@ function onMouseMove(e) {
 }
 window.onresize = onWinResize;
 onWinResize();
+</script>
+<script>
+  if (location.hash.substr(1) === 'thanks') {
+    document.getElementById('form').remove();
+    document.getElementById('thanks').style.display = 'block';
+  }
 </script>
 
 </div>
