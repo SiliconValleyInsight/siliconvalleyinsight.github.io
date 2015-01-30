@@ -14,6 +14,10 @@ body {
     z-index: -10;
 }
 
+@include keyframes (arrow) {
+    to { background-position: -14600px top; }
+}
+
 .home {
 
     header {
@@ -37,6 +41,21 @@ body {
                 letter-spacing: 0.2em;
                 font-weight: 300;
             }
+        }
+        .scroll {
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            @include transform(translate(-50%, -50%));
+            width: 200px;
+            height: 200px;
+            padding-top: 100px;
+            @include animation(arrow steps(73) 3s infinite);
+            background: url(../images/arrow.png) no-repeat left top;
+            font-family: Muli;
+            text-transform: uppercase;
+            color: $medium-gray;
+            font-size: 80%;
         }
     }
 
