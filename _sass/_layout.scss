@@ -121,7 +121,19 @@ body {
     }
 
     .specialty {
-        text-align: center;
+        background: url(../images/stanford-gps-mooc.png) no-repeat right bottom;
+        padding-top: 5em;
+        .container {
+            @include outer-container;
+            height: 500px;
+            section {
+                @include span-columns(12);
+                ul {
+                    list-style: square;
+                    padding-left: 1.5em;
+                }
+            }
+        }
     }
 
     .contact {
