@@ -18,44 +18,56 @@ layout: index
 <div class="content">
 
 <div class="tagline">
+  <section>
+    <h2>
+      We build unreasonably effective software that connects
+      people, content, and data.
+    </h2>
+  </section>
+</div>
+
+<div class="team">
   <div class="container">
-    <section>
-      <h2>
-        We build unreasonably effective software that connects
-        people, content, and data.
-      </h2>
-    </section>
+    <h3>Our Team</h3>
+    <div class="row">
+      <div id="map"></div>
+      <section>
+        <p>We're a globally distributed team of Android devs, iOS devs, Python devs, interaction designers, and data
+        scientists.</p>
+      </section>
+    </div>
+    <div class="row">
+      <section>
+        <p>We've worked at Google, Twitter, Samsung, and at some of the
+        most interesting startups in San Francisco and Manila.</p>
+      </section>
+      <div class="companies">
+        <img src="images/google.png" width="150" alt="Google">
+        <img src="images/wildfire.png" width="150" alt="Wildfire">
+        <img src="images/linkedin.png" width="150" alt="LinkedIn">
+        <img src="images/twitter.png" width="75" alt="Twitter">
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="about">
+<div class="specialty">
   <div class="container">
-    <section class="team">
-      <div class="text">
-        <h3>Our Team</h3>
-        <p>We're a globally distributed team of Android devs, iOS devs, Python devs, interaction designers, and data
-        scientists.</p>
-         <p>We've worked at Google, Twitter, Samsung, and at some of the
-        most interesting startups in San Francisco and Manila.</p>
-      </div>
-    </section>
-    <section class="specialty">
-      <div class="text">
-        <h3>Our Specialties</h3>
-        <p>We're particularly good at</p>
-        <ul>
-          <li>Android & iOS Development</li>
-          <li>Highly Interactive Web Apps</li>
-          <li>Data Science & Data Viz</li>
-        </ul>
-      </div>
+    <section>
+      <h3>Our Specialties</h3>
+      <p>We're particularly good at</p>
+      <ul>
+        <li>Android & iOS Development</li>
+        <li>Highly Interactive Web Apps</li>
+        <li>Data Science & Data Viz</li>
+      </ul>
     </section>
   </div>
 </div>
 
 <div class="contact">
   <div class="bg">
-    <canvas id="allergic-bar-chart"></canvas>
+    <canvas id="bars"></canvas>
   </div>
   <div class="container">
     <section id="form">
@@ -85,84 +97,60 @@ layout: index
     lineColor: '#f9f9f9'
   });
 </script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.21/paper-full.min.js"></script>
-<script type="text/paperscript" canvas="allergic-bar-chart">
-var bars = [];
-var barWidth = 20;
-var gutter = 10;
-function getBaseHeight(x) {
-  var h = view.bounds.height / 4;
-  return Math.sin(
-    5 * Math.PI * x / view.bounds.width
-  ) * h / 2 + h;
-}
-function genRandomHeight(bar) {
-  return bar.baseHeight - Math.random() * bar.baseHeight * 0.25;
-}
-function onWinResize() {
-  var clientRect = view.element.parentNode.getClientRects()[0];
-  var vs = new Size(clientRect.width, clientRect.height);
-  view.viewSize = vs;
-}
-function onResize() {
-  while (bars.length > 0) {
-    bars.pop().remove();
-  }
-  var i = 0;
-  while (i * (barWidth + gutter) < view.bounds.width) {
-    var x = i * (barWidth + gutter);
-    var rect = new Rectangle();
-    rect.bottomCenter = new Point(x, view.bounds.height);
-    rect.size = new Size(barWidth, getBaseHeight(x));
-    var bar = new Path.Rectangle(rect);
-    bar.fillColor = '#f9f9f9';
-    bar.strokeColor = '#eee';
-    bar.pivot = rect.bottomCenter;
-    bar.baseHeight = getBaseHeight(x);
-    bar.nextHeight = genRandomHeight(bar);
-    bars.push(bar);
-    i = bars.length;
-  }
-}
-var mp = null; // Mouse pointer
-var mv = new Point(0, 0); // Mouse vector
-function onFrame(e) {
-  bars.forEach(function(bar, i) {
-    // Pointer force
-    // strength
-    // * y vector (pull)
-    // / distance from pointer (push)
-    var pf = mp ? (
-      20
-      * -mv.y
-      / mp.getDistance(bar.bounds.topCenter)
-    ) : 0;
-    var dh = bar.nextHeight - bar.bounds.height;
-    var dsy = dh / bar.baseHeight + pf;
-    bar.scaling.y += dsy / 30;
-    // Min 1% scale
-    if (bar.scaling.y < 0.01) {
-      bar.scaling.y = 0.01;
-    }
-    // Max to 100% scale
-    if (bar.scaling.y > 1) {
-      bar.scaling.y = 1;
-    }
-    // Random scaling
-    if (Math.abs(dsy) < 0.001) {
-      bar.nextHeight = genRandomHeight(bar);
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+<script src="{{ site.baseurl }}/js/datamaps.world.min.js"></script>
+<script>
+  var map = new Datamap({
+    element: document.getElementById('map'),
+    responsive: true,
+    geographyConfig: {
+      popupOnHover: false,
+      highlightOnHover: false,
+      borderColor: '#333',
+    },
+    fills: {
+      svi: '#fff',
+      defaultFill: '#ccc'
     }
   });
-  // Dampen
-  mv /= 30;
-}
-function onMouseMove(e) {
-  mp = e.point;
-  mv += e.delta;
-}
-window.onresize = onWinResize;
-onWinResize();
+  map.bubbles([
+    {
+      city: "Palo Alto, California",
+      fillKey: 'svi',
+      latitude: 37.4292,
+      longitude: -122.1381,
+      radius: 10
+    },
+    {
+      city: "Manila, Philippines",
+      fillKey: 'svi',
+      latitude: 14.5833,
+      longitude: 120.9667,
+      radius: 10
+    },
+    {
+      city: "Kiev, Ukraine",
+      fillKey: 'svi',
+      latitude: 50.45,
+      longitude: 30.5233,
+      radius: 10
+    }
+  ], {
+    fillOpacity: 0.2,
+    highlightFillColor: 'white',
+    highlightFillOpacity: 0.6,
+    highlightBorderWidth: 0,
+    popupTemplate: function(geo, data) {
+      return '<div class="label">' + data.city + '</div>';
+    }
+  });
 </script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.21/paper-full.min.js"></script>
+<script src="{{ site.baseurl }}/js/bars.js" type="text/paperscript" canvas="bars"></script>
+
 <script>
   if (location.hash.substr(1) === 'thanks') {
     document.getElementById('form').remove();
