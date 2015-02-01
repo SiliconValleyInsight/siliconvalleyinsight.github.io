@@ -1,3 +1,6 @@
+$mobile: new-breakpoint(max-width 480px 4);
+$tablet: new-breakpoint(max-width $max-width 12);
+
 body {
     padding: 0;
     margin: 0;
@@ -30,16 +33,26 @@ body {
             position: absolute;
             top: 50%;
             left: 50%;
+            @include media($mobile) {
+                top: 30%;
+            }
             h1 {
                 font-weight: 200;
                 text-transform: uppercase;
                 line-height: 1;
                 margin-bottom: 1em;
                 letter-spacing: 0.2em;
+                @include media($mobile) {
+                    margin-bottom: 0.5em;
+                }
             }
             .locations {
                 letter-spacing: 0.2em;
                 font-weight: 300;
+                @include media($mobile) {
+                    letter-spacing: 0;
+                    font-size: 0.8em;
+                }
             }
         }
         .scroll {
@@ -54,7 +67,10 @@ body {
             font-family: Muli;
             text-transform: uppercase;
             color: $medium-gray;
-            font-size: 80%;
+            font-size: 0.8em;
+            @include media($mobile) {
+                font-size: 0.6em;
+            }
         }
     }
 
@@ -69,11 +85,16 @@ body {
             top: 50%;
             left: 50%;
             width: 300px;
-            background: white;
+            padding: 1em;
+            background: rgba(255, 255, 255, 0.9);
             text-align: center;
             h2 {
               font-size: 1.5em;
             }
+        }
+        @include media($mobile) {
+            background-size: 100%;
+            height: 100vh;
         }
     }
 
@@ -86,6 +107,9 @@ body {
             h3 {
                 text-align: center;
                 margin-bottom: 2em;
+                @include media($mobile) {
+                    margin-bottom: 1em;
+                }
             }
             .row {
                 @include row;
@@ -94,14 +118,31 @@ body {
                 border-top: 1px solid $medium-gray;
                 margin-top: 3em;
                 padding-top: 1em;
+                @include media($mobile) {
+                    margin-top: 0;
+                }
+            }
+            section {
+                @include span-columns(4);
+                @include media($tablet) {
+                    @include span-columns(6);
+                    padding: 0 1em;
+                }
             }
             #map {
                 @include span-columns(8);
-                height: 300px;
                 position: relative;
+                height: 300px;
+                @include media($tablet) {
+                    height: 200px;
+                }
+                @include media($mobile) {
+                    height: auto;
+                }
                 .label {
                     background: rgba(0, 0, 0, 0.8);
-                    font-size: 90%;
+                    font-family: $base-font-family;
+                    font-size: 0.9em;
                     padding: 5px;
                     line-height: 1;
                 }
@@ -112,11 +153,28 @@ body {
                 img {
                     vertical-align: middle;
                     margin: 0 1em;
+                    @include media($mobile) {
+                        margin: 1em;
+                    }
                 }
             }
-            section {
-                @include span-columns(4);
+            @include media($tablet) {
+                #map, .companies {
+                    @include span-columns(6);
+                }
             }
+            @include media($mobile) {
+                text-align: center;
+                section, #map, .companies {
+                    @include span-columns(4);
+                }
+                section {
+                    padding: 1em;
+                }
+            }
+        }
+        @include media($mobile) {
+            padding: 3em 0;
         }
     }
 
@@ -133,6 +191,19 @@ body {
                     padding-left: 1.5em;
                 }
             }
+            @include media($mobile) {
+                height: 400px;
+            }
+        }
+        @include media($tablet) {
+            padding: 3em;
+            background-position: 1em bottom;
+            background-size: 110%;
+        }
+        @include media($mobile) {
+            padding: 2em;
+            background-position: 1em bottom;
+            background-size: 110%;
         }
     }
 
@@ -166,6 +237,10 @@ body {
                         padding: 0 0.1em 0.1em 0.1em;
                         margin: 0 -0.1em;
                     }
+                    @include media($mobile) {
+                        font-size: 1.3em;
+                        margin-bottom: 0;
+                    }
                 }
                 form {
                     margin: 3em 0;
@@ -177,7 +252,18 @@ body {
                     }
                     p {
                         margin-bottom: 1.5em;
+                        @include media($mobile) {
+                            margin-bottom: 0;
+                        }
                     }
+                    @include media($mobile) {
+                        margin: 1em 0;
+                    }
+                }
+                @include media($mobile) {
+                    @include span-columns(4);
+                    @include shift(0);
+                    padding: 1em;
                 }
             }
             #thanks {
