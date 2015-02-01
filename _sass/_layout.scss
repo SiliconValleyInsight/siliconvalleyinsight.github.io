@@ -125,7 +125,7 @@ body {
         padding-top: 5em;
         .container {
             @include outer-container;
-            height: 500px;
+            height: 480px;
             section {
                 @include span-columns(12);
                 ul {
