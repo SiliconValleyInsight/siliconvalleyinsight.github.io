@@ -1,15 +1,9 @@
 $(document).ready(function($) {
 
-    /* ------------------------------------- */
-    /* 5. ScrollReveal ..................... */
-    /* ------------------------------------- */
-
+    // ScrollReveal
     // window.sr = new scrollReveal();
     
-    /* ------------------------------------- */
-    /* 6. Arrows / Go top link ............. */
-    /* ------------------------------------- */
-
+    // Arrows / Go top link
     // Hide go top link
     $(".scroll-top").hide().css("bottom", "-100px");
 
@@ -17,16 +11,10 @@ $(document).ready(function($) {
     $(function () {
 
         $(window).scroll(function () {
-
             if ($(this).scrollTop() > 250) {
                 $('.scroll-top').fadeIn().css("bottom", "0");
-                $('.arrows-part').fadeOut();
-            } 
-
-            else {
-
+            } else {
                 $('.scroll-top').fadeOut().css("bottom", "-100px");
-                $('.arrows-part').fadeIn();
             }
         });
 
