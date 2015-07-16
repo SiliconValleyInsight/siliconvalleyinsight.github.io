@@ -1,6 +1,7 @@
 ---
 layout: index
 ---
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -9,159 +10,366 @@ layout: index
 
   ga('create', 'UA-59726232-1', 'auto');
   ga('send', 'pageview');
-
 </script>
 
-<header>
-  <div class="particles"></div>
-  <section>
-    <h1>{{ site.title }}</h1>
-    <p class="locations">
-        Android | iOS | Web | Data Science
-    </p>
-  </section>
-  <div class="scroll">
-    Scroll down
-  </div>
+<!-- Left Part / Header -->
+<header id="header">
+
+  <!-- Your logo, link added to go back to the top when the user click on it -->
+  <a href="#" class="image avatar">
+    <img src="images/logo.png" alt="" />
+  </a>
+
+  <h1>Hello!</h1>
+  <h2>you are faster than us,<br>
+  we're working on our new website.</h2>
+  <h3>Scroll for more informations</h3>
+
 </header>
 
-<div class="content">
+<!-- Right Part / Main -->
+<div id="main">
 
-<div class="tagline" id="tagline-anchor">
-  <section>
-    <h2>
-      We build beautiful native mobile apps, effective web platforms and, and insightful data solutions.
-    </h2>
-  </section>
-</div>
+  <!-- 1st Section -->
+  <section id="countdown">
+    <div data-sr>
 
-<div class="team">
-  <div class="container">
-    <h3>Our Team</h3>
-    <div class="row">
-      <div id="map"></div>
-      <section>
-        <p>We're a globally distributed team of Android devs, iOS devs, web devs, interaction designers, and data
-        scientists.</p>
-      </section>
-    </div>
-    <div class="row">
-      <section>
-        <p>We've worked at Google, Twitter, Wildfire, Samsung, and at some of the
-        most interesting startups in the U.S., Asia, and Europe.</p>
-      </section>
-      <div class="companies">
-        <img src="images/google.png" width="150" alt="Google">
-        <img src="images/wildfire.png" width="150" alt="Wildfire">
-        <img src="images/linkedin.png" width="150" alt="LinkedIn">
-        <img src="images/twitter.png" width="75" alt="Twitter">
-      </div>
-    </div>
-  </div>
-</div>
+      <header class="major">
+        <h2>1/ Countdown Section<br>
+          <small>We are Coming Soon...</small>
+        </h2>
+        <div class="border-separator"></div>
+      </header>
 
-<!-- 
-<div class="specialty">
-  <div class="container">
-    <section>
-      <h3>Our Specialties</h3>
-      <p>We're particularly good at</p>
-      <ul>
-        <li>Android & iOS Development</li>
-        <li>Highly Interactive Web Apps</li>
-        <li>Data Science & Data Viz</li>
-      </ul>
-    </section>
-  </div>
-</div>
--->
-<div class="contact">
-  <div class="container">
-    <section id="form">
-      <h2>What can we build for <u>you</u>?</h2>
-      <form action="https://formic.marksteve.com/s/c66b7e4c" method="post">
-        <div class="info">
-          <div><input type="text" name="name" placeholder="Name"></div>
-          <div><input type="email" name="email" placeholder="Email"></div>
+      <p>Accumsan orci faucibus id eu lorem semper. Eu ac iaculis ac nunc nisi lorem vulputate
+        lorem neque cubilia ac in adipiscing in curae lobortis tortor primis integer massa adipiscing
+        id nisi accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna.
+        Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque cubilia.</p>
+
+      <div id="countdown_dashboard">
+        <div class="row">
+
+          <!-- Days / if you need only 2 figures for the day, delete the first line <div class="digit">0</div> -->
+          <div class="col-xs-3 col-sm-3 col-lg-3 dash-glob">
+            <div class="dash days_dash">
+              <div class="digit">0</div>
+              <div class="digit">0</div>
+              <div class="digit">0</div>
+              <span class="dash_title">Days</span>
+            </div>
+          </div>
+
+          <!-- Hours -->
+          <div class="col-xs-3 col-sm-3 col-lg-3 dash-glob">
+            <div class="dash hours_dash">
+              <div class="digit">0</div>
+              <div class="digit">0</div>
+              <span class="dash_title">Hours</span>
+            </div>
+          </div>
+
+          <!-- Minutes -->
+          <div class="col-xs-3 col-sm-3 col-lg-3 dash-glob">
+            <div class="dash minutes_dash">
+              <div class="digit">0</div>
+              <div class="digit">0</div>
+              <span class="dash_title">Minutes</span>
+            </div>
+          </div>
+
+          <!-- Seconds -->
+          <div class="col-xs-3 col-sm-3 col-lg-3 dash-glob">
+            <div class="dash seconds_dash">
+              <div class="digit">0</div>
+              <div class="digit">0</div>
+              <span class="dash_title">Seconds</span>
+            </div>
+          </div>
+
         </div>
-        <p><input type="text" name="company" placeholder="Company">
-        <p><textarea name="message" placeholder="How can we help?" rows="5"></textarea></p>
-        <p><button type="submit">Start a Conversation</button></p>
-      </form>
-    </section>
-    <section id="thanks">
-      <h2>Thank you!</h2>
-      <p>We'll get back to you in the next 48 hours!</p>
-    </section>
+
+      </div> <!-- .countdown_dashboard -->
+
+    </div> <!-- /data-sr -->
+  </section> <!-- #countdown -->
+
+  <!-- 2nd Section -->
+  <section id="about">
+    <div data-sr>
+
+      <header class="major">
+        <h2>2/ About Section<br>
+          <small>New website, new store! - Geneva CH</small>
+        </h2>
+        <div class="border-separator"></div>
+      </header>
+
+      <p>Accumsan orci faucibus id eu lorem semper. Eu ac iaculis ac nunc nisi lorem vulputate lorem
+        neque cubilia ac in adipiscing in curae lobortis tortor primis integer massa adipiscing id
+        nisi accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan
+        orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque cubilia.</p>
+
+      <div class="row">
+
+        <div class="col-xs-12 col-sm-6 col-lg-6">
+          <article class="work-item">
+            <a href="images/port-1.jpg" class="image fit thumb venobox"
+               data-gall="myGallery" data-title="The Swiss Army Knife">
+              <img src="images/port-1.jpg" alt="" />
+            </a>
+            <div class="details">
+              <h4>Magna sed consequat tempus<br>
+                <small>Geneva / 18 Quarter St.</small>
+              </h4>
+              <p>Through the milky way.
+                In my Spaceship, at the speed of light I'm gonna make it.
+                I know you've been expecting me, turn on the camera's take another scene.
+                We go like hands up people get with the show, we're taking over people lose control.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-lg-6">
+          <article class="work-item">
+            <a href="images/port-2.jpg" class="image fit thumb venobox"
+               data-gall="myGallery" data-title="Faster than never">
+              <img src="images/port-2.jpg" alt="" />
+            </a>
+            <div class="details">
+              <h4>Magna sed consequat tempus<br>
+                <small>Geneva / 18 Quarter St.</small>
+              </h4>
+              <p>Through the milky way.
+                In my Spaceship, at the speed of light I'm gonna make it.
+                I know you've been expecting me, turn on the camera's take another scene.
+                We go like hands up people get with the show, we're taking over people lose control.
+              </p>
+            </div>
+          </article>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-xs-12 col-sm-6 col-lg-6">
+          <article class="work-item no-margin-bottom">
+            <a href="images/port-3.jpg" class="image fit thumb venobox"
+               data-gall="myGallery" data-title="Ready before the others">
+              <img src="images/port-3.jpg" alt="" />
+            </a>
+            <div class="details">
+              <h4>Magna sed consequat tempus<br>
+                <small>Geneva / 18 Quarter St.</small>
+              </h4>
+              <p>Through the milky way.
+                In my Spaceship, at the speed of light I'm gonna make it.
+                I know you've been expecting me, turn on the camera's take another scene.
+                We go like hands up people get with the show, we're taking over people lose control.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-lg-6">
+          <article class="work-item no-margin-bottom">
+            <a href="images/port-4.jpg" class="image fit thumb venobox"
+               data-gall="myGallery" data-title="Boost your web projects">
+              <img src="images/port-4.jpg" alt="" />
+            </a>
+            <div class="details">
+              <h4>Magna sed consequat tempus<br>
+                <small>Geneva / 18 Quarter St.</small>
+              </h4>
+              <p>Through the milky way.
+                In my Spaceship, at the speed of light I'm gonna make it.
+                I know you've been expecting me, turn on the camera's take another scene.
+                We go like hands up people get with the show, we're taking over people lose control.
+              </p>
+            </div>
+          </article>
+        </div>
+
+      </div>
+
+    </div> <!-- /data-sr -->
+  </section> <!-- #about -->
+
+  <!-- 3rd Section -->
+  <section id="services">
+    <div data-sr>
+
+      <header class="major">
+        <h2>3/ Services Section<br>
+          <small>Our premium services</small>
+        </h2>
+        <div class="border-separator"></div>
+      </header>
+
+      <p>Accumsan orci faucibus id eu lorem semper. Eu ac iaculis ac nunc nisi lorem vulputate
+        lorem neque cubilia ac in adipiscing in curae lobortis tortor primis integer massa adipiscing
+        id nisi accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna.
+        Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque cubilia.</p><br>
+
+      <div class="row">
+
+        <div class="col-xs-12 col-sm-4 col-lg-4 block-services">
+          <span class="icon-services icon-camera"></span>
+          <h3>Photography</h3>
+          <p>Lorem ipsum Do dolor commodo occaecat sit pariatur nisi sit
+            laboris officia exercitation officia laboris ex ullamco nulla do in elit.</p>
+        </div>
+
+        <div class="col-xs-12 col-sm-4 col-lg-4 block-services">
+          <span class="icon-services icon-pencil"></span>
+          <h3>Creativity</h3>
+          <p>Lorem ipsum Do dolor commodo occaecat sit pariatur nisi sit
+            laboris officia exercitation officia laboris ex ullamco nulla do in elit.</p>
+        </div>
+
+        <div class="col-xs-12 col-sm-4 col-lg-4 block-services">
+          <span class="icon-services icon-chat"></span>
+          <h3>Support 24/7</h3>
+          <p>Lorem ipsum Do dolor commodo occaecat sit pariatur nisi sit
+            laboris officia exercitation officia laboris ex ullamco nulla do in elit.</p>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-xs-12 col-sm-4 col-lg-4 block-services">
+          <span class="icon-services icon-telescope"></span>
+          <h3>Visibility</h3>
+          <p>Lorem ipsum Do dolor commodo occaecat sit pariatur nisi sit
+            laboris officia exercitation officia laboris ex ullamco nulla do in elit.</p>
+        </div>
+
+        <div class="col-xs-12 col-sm-4 col-lg-4 block-services">
+          <span class="icon-services icon-presentation"></span>
+          <h3>Marketing</h3>
+          <p>Lorem ipsum Do dolor commodo occaecat sit pariatur nisi sit
+            laboris officia exercitation officia laboris ex ullamco nulla do in elit.</p>
+        </div>
+
+        <div class="col-xs-12 col-sm-4 col-lg-4 block-services">
+          <span class="icon-services icon-trophy"></span>
+          <h3>Awards</h3>
+          <p>Lorem ipsum Do dolor commodo occaecat sit pariatur nisi sit
+            laboris officia exercitation officia laboris ex ullamco nulla do in elit.</p>
+        </div>
+
+      </div>
+
+    </div> <!-- /data-sr -->
+  </section> <!-- #services -->
+
+  <!-- 4th Section -->
+  <section id="pricing">
+    <div data-sr>
+
+      <header class="major">
+        <h2>4/ Pricing section<br>
+          <small>Find easily your best offer</small>
+        </h2>
+        <div class="border-separator"></div>
+      </header>
+
+      <p>Accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna.
+        Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque lorem ipsum dolor.</p>
+
+      <div class="table-wrapper">
+        <table>
+
+          <thead>
+            <tr>
+              <th>Variant</th>
+              <th>Informations</th>
+              <th class="text-center">Price</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="td-title">Friday pass</td>
+              <td class="td-description">Friday access to the Stadium</td>
+              <td class="td-price">29$</td>
+            </tr>
+            <tr>
+              <td class="td-title">Saturday pass</td>
+              <td class="td-description">Saturday access to the Stadium</td>
+              <td class="td-price">39$</td>
+            </tr>
+            <tr>
+              <td class="td-title">Sunday pass</td>
+              <td class="td-description">Sunday access to the Stadium</td>
+              <td class="td-price">49$</td>
+            </tr>
+            <tr>
+              <td class="td-title">Weekend pass</td>
+              <td class="td-description">Full-weekend access to the Stadium in General place</td>
+              <td class="td-price">99$</td>
+            </tr>
+            <tr>
+              <td class="td-title">Weekend VIP pass</td>
+              <td class="td-description">Full-weekend access to the Stadium in VIP place</td>
+              <td class="td-price">149$</td>
+            </tr>
+          </tbody>
+
+          <tfoot>
+            <tr>
+              <td class="td-terms" colspan="3"><p>Limited time, subject to availability, terms apply.</p></td>
+            </tr>
+          </tfoot>
+
+        </table>
+      </div>
+
+      <button class="btn btn-lg btn-order">Order my pass with <i class="fa fa-paypal"></i></button>
+
+    </div> <!-- /data-sr -->
+  </section> <!-- #pricing -->
+
+  <!-- Arrows / Go top link -->
+  <div class="arrows-part">
+    <div>
+      <span class="arrows-bottom first-chevron"></span>
+      <span class="arrows-bottom second-chevron"></span>
+      <span class="arrows-bottom third-chevron"></span>
+    </div>
   </div>
-</div>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="{{ site.baseurl }}/js/jquery.particleground.min.js"></script>
-<script>
-  $('.particles').particleground({
-    dotColor: '#eee',
-    lineColor: '#f9f9f9'
-  });
-</script>
+  <div class="scroll-top">
+   <a href="#" class="go-top">
+    <div>
+      <span class="arrows-bottom quatro"></span>
+    </div>
+  </a>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-<script src="{{ site.baseurl }}/js/datamaps.world.min.js"></script>
-<script>
-  var map = new Datamap({
-    element: document.getElementById('map'),
-    responsive: true,
-    geographyConfig: {
-      popupOnHover: false,
-      highlightOnHover: false,
-      borderColor: '#333',
-    },
-    fills: {
-      svi: '#fff',
-      defaultFill: '#ccc'
-    }
-  });
-  /*
-  map.bubbles([
-    {
-      city: "Palo Alto, California",
-      fillKey: 'svi',
-      latitude: 37.4292,
-      longitude: -122.1381,
-      radius: 10
-    },
-    {
-      city: "Manila, Philippines",
-      fillKey: 'svi',
-      latitude: 14.5833,
-      longitude: 120.9667,
-      radius: 10
-    },
-    {
-      city: "Kiev, Ukraine",
-      fillKey: 'svi',
-      latitude: 50.45,
-      longitude: 30.5233,
-      radius: 10
-    }
-  ], {
-    fillOpacity: 0.2,
-    highlightFillColor: 'white',
-    highlightFillOpacity: 0.6,
-    highlightBorderWidth: 0,
-    popupTemplate: function(geo, data) {
-      return '<div class="label">' + data.city + '</div>';
-    }
-  });
-  */
-</script>
+  </div>
+</div> <!-- End Right Part / Main -->
 
-<script>
-  if (location.hash.substr(1) === 'thanks') {
-    document.getElementById('form').remove();
-    document.getElementById('thanks').style.display = 'block';
-  }
-</script>
+<!-- Footer -->
+<footer id="footer">
 
-</div>
+  <p class="copyright">
+    <a href="http://themeforest.net/user/Madeon08/portfolio" target="_blank">&copy; HELITE 2015</a>
+    - Made for great people
+  </p>
+
+</footer>
+
+<!-- * Libraries jQuery, Easing and Bootstrap - Be careful to not remove them * -->
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script src="js/SmoothScroll.js"></script>
+<!-- Reveal elements as they enter the viewport -->
+<script src='js/scrollReveal.js'></script>
+<!-- Main JS / Custom Plugins -->
+<script src="js/main.js"></script>
+
+<!--[if lt IE 10]><script type="text/javascript" src="js/placeholder.js"></script><![endif]-->
