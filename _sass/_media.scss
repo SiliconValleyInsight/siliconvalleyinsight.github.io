@@ -10,16 +10,6 @@
   #main {
     padding-right: 4em;
   }
-
-  #newsletter {
-    #notifyMe {
-      .form-group {
-        input[type="text"] {
-          width: 100%;
-        }
-      }
-    }
-  }
 }
 
 /* Notebook devices */
@@ -44,6 +34,7 @@
     text-align: center;
     top: auto;
     width: 100%;
+    border-right: none;
 
     h1 {
       font-size: 1.75em;
@@ -62,18 +53,6 @@
     text-align: center;
     width: 100%;
     background: $shark;
-    .icons {
-    }
-
-    .copyright {
-      li {
-        border-left-width: 1px;
-        display: inline-block;
-        line-height: 1em;
-        margin-left: 0.75em;
-        padding-left: 0.75em;
-      }
-    }
   }
 
   #main {
@@ -90,118 +69,13 @@
 
 /* Small Devices, Tablets */
 @include tablet {
+  #header {
+    border-right: none;
+  }
+
   #main {
     padding-left: 2em;
     padding-right: 2em;
-  }
-
-  #countdown_dashboard {
-    .dash-glob {
-      .dash {
-        .digit {
-          font-size: 2em;
-          font-weight: 300;
-        }
-
-        .dash_title {
-          color: $dove-gray;
-          letter-spacing: 1px;
-          font-size: 0.6em;
-          padding-left: 2px;
-        }
-      }
-    }
-  }
-
-  .block-contact {
-    p {
-      margin: 0;
-    }
-  }
-
-  .table-wrapper {
-    -webkit-overflow-scrolling: touch;
-    overflow-x: auto;
-
-    thead {
-      display: none;
-    }
-
-    tr {
-      text-align: center;
-      margin-bottom: 30px;
-      clear: both;
-      display: block;
-      border: none;
-      float: left;
-      width: 100%;
-      background: $alabaster;
-    }
-
-    .td-title {
-      float: left;
-      width: 100%;
-      padding: 0 0.75em;
-    }
-
-    .td-description {
-      float: left;
-      width: 100%;
-      padding-top: 0;
-      padding-bottom: 0.75em;
-    }
-
-    .td-price {
-      float: left;
-      width: 100%;
-      clear: both;
-      padding: 0.1em 0.75em;
-    }
-
-    .td-terms {
-      color: $dusty-gray;
-      font-weight: 500;
-      font-size: 0.8em;
-      font-style: italic;
-      text-align: right;
-      padding: 0.75em 0;
-
-      p {
-        margin-bottom: 0;
-      }
-    }
-
-    tfoot {
-      border: none;
-
-      tr {
-        background: none;
-        margin-bottom: 0;
-      }
-    }
-  }
-
-  button.btn {
-    width: 100%;
-  }
-
-  .twitter-block {
-    width: 100%;
-    margin: 50px auto 0;
-
-    ul {
-      max-width: 100%;
-      height: 400px;
-
-      li {
-        width: 100%;
-        height: 200px;
-      }
-    }
-
-    .tweet {
-      height: 400px;
-    }
   }
 }
 
@@ -209,6 +83,7 @@
 @include phone {
   #header {
     padding: 4em 2em;
+    border-right: none;
   }
 
   #main {
@@ -217,26 +92,6 @@
 
   .arrows-part, .scroll-top {
     width: 30px;
-  }
-
-  #countdown_dashboard {
-    .dash-glob {
-      width: 50%;
-
-      .dash {
-        .digit {
-          font-size: 2.5em;
-          font-weight: 600;
-        }
-
-        .dash_title {
-          color: $dove-gray;
-          letter-spacing: 1px;
-          font-size: 0.6em;
-          padding-left: 2px;
-        }
-      }
-    }
   }
 }
 

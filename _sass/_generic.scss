@@ -1,4 +1,3 @@
-
 body {
   background: $white;
   font-family: $font-family;
@@ -11,42 +10,19 @@ body, html {
 
 body, input, select, textarea {
   // @include bezier-transition(all, $fast-transition, cubic-bezier(0.42, 0, 0.58, 1));
-  color: $boulder;
+  color: $nigh-rider;
   font-size: 16pt;
   line-height: 1.75em;
 }
 
 a {
-  @include bezier-transition(all, $fast-transition, cubic-bezier(0.42, 0, 0.58, 1));
+  // @include bezier-transition(all, $fast-transition, cubic-bezier(0.42, 0, 0.58, 1));
   cursor: pointer;
   text-decoration: none;
-
-  &:hover {
-    color: $torch-red;
-    text-decoration: none !important;
-    outline: none !important;
-  }
-
-  &:active, &:focus {
-    outline: none !important;
-    text-decoration: none !important;
-    color: $shark;
-  }
-}
-
-button {
-  @include bezier-transition(all, $fast-transition, cubic-bezier(0.42, 0, 0.58, 1));
-  cursor: pointer;
-
-  &:hover, &:active, &:focus {
-    outline: none !important;
-    text-decoration: none !important;
-    color: $shark;
-  }
 }
 
 strong, b {
-  font-weight: 600;
+  font-weight: $font-weight-bold;
 }
 
 em, i {
@@ -60,7 +36,7 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: $shark;
+  color: $nigh-rider;
   font-weight: $font-weight-bold;
   line-height: 1em;
   margin: 0 0 (2em * 0.5) 0;
@@ -69,23 +45,17 @@ h1, h2, h3, h4, h5, h6 {
     color: inherit;
     text-decoration: none;
   }
-
-  small {
-    color: $dove-gray;
-  }
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 2.5em;
   line-height: 1.5em;
 }
 
 h2 {
   font-size: 1.2em;
   line-height: 1.2em;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-weight: $font-weight-bold;
   margin-bottom: 0;
 }
 
@@ -94,178 +64,4 @@ h3 {
   line-height: 1.5em;
   margin-bottom: 0.5em;
   font-weight: $font-weight;
-}
-
-h4 {
-  font-size: 0.8em;
-  line-height: 1.1em;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-h5 {
-  font-size: 0.8em;
-  line-height: 1em;
-  margin-bottom: 0.2em;
-  font-weight: $font-weight;
-  text-transform: uppercase;
-}
-
-h6 {
-  font-size: 0.7em;
-  line-height: 1.5em;
-}
-
-sub {
-  font-size: 0.8em;
-  position: relative;
-  top: 0.5em;
-}
-
-sup {
-  font-size: 0.8em;
-  position: relative;
-  top: -0.5em;
-}
-
-.display-none {
-  display: none !important;
-}
-
-.border-separator {
-  background-color: $torch-red;
-  height: 2px;
-  position: relative;
-  width: 22px;
-  display: block;
-  margin: 10px 0 20px;
-}
-
-.align-left {
-  text-align: left;
-}
-
-.align-center {
-  text-align: center;
-}
-
-.align-right {
-  text-align: right;
-}
-
-.no-margin-bottom {
-  margin-bottom: 0;
-}
-
-.opacity-0 {
-  opacity: 0;
-}
-
-form {
-  margin: 0 0 1em 0;
-}
-
-button.btn {
-  background-color: transparent;
-  @include border-radius(0.35em);
-  border: solid 3px $gallery;
-  color: $dusty-gray;
-  cursor: pointer;
-  display: inline-block;
-  font-weight: $font-weight-bold;
-  height: 3.15em;
-  height: calc(2.75em + 6px);
-  line-height: 2.75em;
-  min-width: 10em;
-  padding: 0 1.5em;
-  text-align: center;
-  text-decoration: none;
-  white-space: nowrap;
-
-  &:hover {
-    border-color: $torch-red;
-    color: $torch-red;
-  }
-
-  &:active, &:focus {
-    border-color: darken($torch-red, 10%);
-    color: darken($torch-red, 10%);
-    box-shadow: none;
-  }
-}
-
-.image {
-  border: 0;
-  display: inline-block;
-  position: relative;
-
-  &:before {
-    background: url("images/overlay.png");
-    content: '';
-    display: block;
-    height: 100%;
-    left: 0;
-    opacity: 0.5;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
-
-  &.thumb {
-    text-align: center;
-
-    &:after {
-      border: solid 3px rgba($white, 0.5);
-      color: $white;
-      content: 'CLICK';
-      letter-spacing: 2px;
-      display: inline-block;
-      font-size: 0.8em;
-      font-weight: $font-weight-bold;
-      left: 50%;
-      line-height: 2.25em;
-      margin: -1.25em 0 0 -3em;
-      opacity: 0;
-      padding: 0 1.5em;
-      position: absolute;
-      text-align: center;
-      text-decoration: none;
-      top: 50%;
-      white-space: nowrap;
-    }
-
-    &:hover {
-      &:after {
-        opacity: 1.0;
-      }
-    }
-  }
-
-  img {
-    @include border-radius(0);
-    display: block;
-  }
-
-  &.fit {
-    display: block;
-    margin: 0 0 2em 0;
-    width: 100%;
-
-    img {
-      width: 100%;
-    }
-  }
-
-  &.avatar {
-    @include border-radius(0);
-
-    &:before {
-      display: none;
-    }
-
-    img {
-      @include border-radius(0);
-      width: 100%;
-    }
-  }
 }
