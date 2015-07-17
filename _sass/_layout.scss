@@ -92,7 +92,25 @@
 }
 
 /* Contacts section */
+#contact {
 
+  #work-inquires {
+    margin-top: 2.38em;
+
+    strong > a {
+      display: block;
+      line-height: 1em;
+    }
+  }
+
+  #copyright {
+    margin-top: 2.38em;
+
+    small > span {
+      display: block;
+    }
+  }
+}
 
 /* Scroll Arrows */
 /* Uncomment to get "Scroll to top" functionality

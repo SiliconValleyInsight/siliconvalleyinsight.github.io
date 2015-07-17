@@ -19,10 +19,12 @@ a {
   // @include bezier-transition(all, $fast-transition, cubic-bezier(0.42, 0, 0.58, 1));
   cursor: pointer;
   text-decoration: none;
+  color: $butterfly-bush;
 }
 
 strong, b {
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight;
+  font-size: .95em;
 }
 
 p {
@@ -59,4 +61,10 @@ h3 {
   font-size: 1em;
   margin-bottom: 1.9em;
   font-weight: $font-weight;
+}
+
+small {
+  font-size: 0.56em;
+  line-height: 1.7em;
+  color: $dove-grey;
 }
