@@ -2,18 +2,17 @@
 #header {
   height: 100%;
   left: 0;
-  padding: 4em 3em;
+  padding: 2.85em 2.6em;
   position: fixed;
   text-align: left;
   top: 0;
-  width: 35%;
+  width: $left-part-width;
+  min-width: $left-part-min-width;
   border-right: 1px solid $concrete;
 
   h1 {
-    font-size: 5em;
     font-weight: 800;
     line-height: 1;
-    margin-bottom: 10px;
     position: relative;
   }
 
@@ -26,10 +25,11 @@
 #footer {
   bottom: 0;
   left: 0;
-  padding: 4em 3em;
+  padding: 2.85em 2.6em 6.9em 2.6em;
   position: fixed;
   text-align: left;
   width: $left-part-width;
+  min-width: $left-part-min-width;
 }
 
 /* Main part */

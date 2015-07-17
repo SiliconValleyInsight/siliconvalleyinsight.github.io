@@ -1,12 +1,6 @@
 /* Media Queries */
 /* Large Devices, Wide Screens */
 @include desktop {
-  #header {
-    h1 {
-      font-size: 2.5em;
-    }
-  }
-
   #main {
     padding-right: 4em;
   }
@@ -16,18 +10,24 @@
 @include notebook {
   #header {
     // padding: 1.5em 3em 3em;
+    width: $left-part-min-width;
+  }
+
+  #main {
+    margin-left: $left-part-min-width;
+    width: calc(100% - #{$left-part-min-width});
   }
 
   #footer {
     // padding: 0 3em 1.5em 0;
+    width: $left-part-min-width;
   }
 }
 
 /* Medium Devices, Desktops */
 @include medium {
   #header {
-    background-attachment: scroll;
-    background-position: top left, center center;
+    background: scroll top left, center center;
     background-size: auto, cover;
     left: auto;
     position: relative;
