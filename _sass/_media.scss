@@ -59,6 +59,13 @@
       display: block;
     }
   }
+
+  #main > #contact-us {
+    padding-top: 4em;
+    #work-inquires > strong {
+      font-size: .8em;
+    }
+  }
 }
 
 /* Small Devices, Tablets */
@@ -103,6 +110,40 @@
       padding: 0 2em;
     }
   }
+
+  #about {
+    ul > li {
+      width: 45%;
+      vertical-align: top;
+      display: inline-block;
+      margin-right: 1em;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  #main > #svi-team {
+    margin: 0;
+    padding: 2em;
+
+    ul {
+      > li {
+        margin: 0;
+        padding: 0;
+        &:first-child {
+          margin: 0;
+        }
+        &:last-child {
+          margin-left: 0.57em;
+        }
+      }
+    }
+
+    .svi-map-img {
+      height: 5em;
+    }
+  }
 }
 
 /* Extra Small Devices, Phones */
@@ -126,43 +167,12 @@
     padding: 4em 0;
   }
 
-  #about {
-    ul > li {
-      width: 45%;
-      vertical-align: top;
-      display: inline-block;
-      &:last-child {
-        float: right;
-      }
-    }
-  }
-
   #main > #svi-team {
     margin: 0;
     padding: 2em;
 
-    ul {
-      > li {
-        margin: 0;
-        padding: 0;
-        &:first-child {
-          margin: 0;
-        }
-        &:last-child {
-          margin-left: 0.57em;
-        }
-      }
-    }
-
     .svi-map-img {
-      height: 4em;
-    }
-  }
-
-  #main > #contact {
-    padding-top: 4em;
-    #work-inquires > strong {
-      font-size: .8em;
+      height: 4.5em;
     }
   }
 
