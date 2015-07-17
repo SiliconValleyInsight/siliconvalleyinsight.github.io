@@ -33,7 +33,7 @@
 @include medium {
   #header {
     width: $left-part-half-width;
-    max-width: $left-part-min-width;
+    max-width: 100%;
     min-width: 0;
   }
 
@@ -48,13 +48,13 @@
 
   #footer {
     width: $left-part-half-width;
-    max-width: $left-part-min-width;
+    max-width: 100%;
     min-width: 0;
   }
 
   #about {
     ul > li {
-      margin-top: 4.5em;
+      margin-bottom: 4.5em;
       margin-right: 0;
       display: block;
     }
@@ -68,15 +68,15 @@
     background-size: auto, cover;
     left: auto;
     position: relative;
-    text-align: center;
+    text-align: left;
     top: auto;
     width: 100%;
     max-width: 100%;
-    padding: 2em 2em;
+    padding: 4em 2em;
     border-right: none;
 
     h1 {
-      font-size: 1.75em;
+      font-size: 2.85em;
 
       br {
         display: inline;
@@ -88,17 +88,20 @@
     bottom: auto;
     left: auto;
     position: relative;
-    padding: 2em 0;
-    text-align: center;
+    padding: 2em 2em;
+    text-align: left;
     width: 100%;
     max-width: 100%;
-    background: $shark;
   }
 
   #main {
     margin: 0;
+    padding: 2em 0;
     width: 100%;
-    padding: 4em 0;
+    > section {
+      margin: 0;
+      padding: 0 2em;
+    }
   }
 }
 
@@ -107,15 +110,65 @@
   #header {
     padding: 4em 2em;
     border-right: none;
+
+    h2 {
+      &:after {
+        content: "Scroll down";
+        display: block;
+        margin-top: 2.5em;
+        font-size: .5em;
+        color: $manatee;
+      }
+    }
   }
 
   #main {
-    padding: 4em 2em;
+    padding: 4em 0;
   }
 
-  .arrows-part, .scroll-top {
-    width: 30px;
+  #about {
+    ul > li {
+      width: 45%;
+      vertical-align: top;
+      display: inline-block;
+      &:last-child {
+        float: right;
+      }
+    }
   }
+
+  #main > #svi-team {
+    margin: 0;
+    padding: 2em;
+
+    ul {
+      > li {
+        margin: 0;
+        padding: 0;
+        &:first-child {
+          margin: 0;
+        }
+        &:last-child {
+          margin-left: 0.57em;
+        }
+      }
+    }
+
+    .svi-map-img {
+      height: 4em;
+    }
+  }
+
+  #main > #contact {
+    padding-top: 4em;
+    #work-inquires > strong {
+      font-size: .8em;
+    }
+  }
+
+  //.arrows-part, .scroll-top {
+  //  width: 30px;
+  //}
 }
 
 /* Only for tablet in landscape mode */
