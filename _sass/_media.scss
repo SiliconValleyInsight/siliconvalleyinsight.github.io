@@ -1,9 +1,6 @@
 /* Media Queries */
 /* Large Devices, Wide Screens */
 @include desktop {
-  #main {
-    padding-right: 4em;
-  }
 }
 
 /* Notebook devices */
@@ -15,11 +12,20 @@
   #main {
     width: calc(100% - #{$left-part-min-width});
     margin-left: $left-part-min-width;
-    padding: 2.85em 2.6em;
+    padding: 2.85em 0;
+    > section {
+      margin: 4em 0 4em 2.85em;
+    }
   }
 
   #footer {
     width: $left-part-min-width;
+  }
+
+  #about {
+    ul > li {
+      margin-right: 3.3em;
+    }
   }
 }
 
@@ -34,13 +40,24 @@
   #main {
     width: $left-part-half-width;
     margin-left: $left-part-half-width;
-    padding: 2.85em 2.6em;
+    padding: 2.85em 0;
+    > section {
+      margin: 4em 0 4em 2.85em;
+    }
   }
 
   #footer {
     width: $left-part-half-width;
     max-width: $left-part-min-width;
     min-width: 0;
+  }
+
+  #about {
+    ul > li {
+      margin-top: 4.5em;
+      margin-right: 0;
+      display: block;
+    }
   }
 }
 
@@ -81,7 +98,7 @@
   #main {
     margin: 0;
     width: 100%;
-    padding: 4em 2em;
+    padding: 4em 0;
   }
 }
 

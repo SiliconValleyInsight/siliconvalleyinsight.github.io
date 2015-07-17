@@ -35,13 +35,12 @@
 /* Main part */
 #main {
   margin-left: $left-part-width;
-  padding: 2.85em 5.7em;
+  padding: 2.85em 0;
   width: calc(100% - #{$left-part-width});
   background: rgba($white, 1);
-  padding-right: 10em;
 
   > section {
-    margin: 4em 0 0 0;
+    margin: 4em 0 0 5.8em;
     padding: 4em 0 0 0;
 
     &:first-child {
@@ -52,7 +51,51 @@
   }
 }
 
+/* About section */
+#about {
+  ul > li {
+    margin-right: 4.3em;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+/* SVI Team section */
+#main > #svi-team {
+  background-color: $picton-blue;
+  margin: 2.85em 0 0 0;
+  padding: 3.57em 5.8em;
+
+  header > h3, p {
+    color: $white;
+  }
+
+  ul {
+    margin-top: 3.9em;
+    > li {
+      margin-right: 1.8em;
+
+      &:first-child {
+        margin-right: .4em;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .svi-map-img {
+    height: 8em;
+  }
+}
+
+/* Contacts section */
+
+
 /* Scroll Arrows */
+/* Uncomment to get "Scroll to top" functionality
 .scroll-top {
   @include bezier-transition(all, $fast-transition, cubic-bezier(0.42, 0, 0.58, 1));
   position: fixed;
@@ -98,3 +141,4 @@
   width: 16px;
   height: 16px;
 }
+*/
