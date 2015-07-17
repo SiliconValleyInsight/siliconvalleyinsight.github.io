@@ -9,23 +9,43 @@
 /* Notebook devices */
 @include notebook {
   #header {
-    // padding: 1.5em 3em 3em;
     width: $left-part-min-width;
   }
 
   #main {
-    margin-left: $left-part-min-width;
     width: calc(100% - #{$left-part-min-width});
+    margin-left: $left-part-min-width;
+    padding: 2.85em 2.6em;
   }
 
   #footer {
-    // padding: 0 3em 1.5em 0;
     width: $left-part-min-width;
   }
 }
 
-/* Medium Devices, Desktops */
+/* Medium Devices */
 @include medium {
+  #header {
+    width: $left-part-half-width;
+    max-width: $left-part-min-width;
+    min-width: 0;
+  }
+
+  #main {
+    width: $left-part-half-width;
+    margin-left: $left-part-half-width;
+    padding: 2.85em 2.6em;
+  }
+
+  #footer {
+    width: $left-part-half-width;
+    max-width: $left-part-min-width;
+    min-width: 0;
+  }
+}
+
+/* Small Devices, Tablets */
+@include tablet {
   #header {
     background: scroll top left, center center;
     background-size: auto, cover;
@@ -34,6 +54,8 @@
     text-align: center;
     top: auto;
     width: 100%;
+    max-width: 100%;
+    padding: 2em 2em;
     border-right: none;
 
     h1 {
@@ -52,30 +74,14 @@
     padding: 2em 0;
     text-align: center;
     width: 100%;
+    max-width: 100%;
     background: $shark;
   }
 
   #main {
     margin: 0;
     width: 100%;
-    padding-left: 3em;
-    padding-right: 3em;
-  }
-
-  textarea {
-    margin-top: 0 !important;
-  }
-}
-
-/* Small Devices, Tablets */
-@include tablet {
-  #header {
-    border-right: none;
-  }
-
-  #main {
-    padding-left: 2em;
-    padding-right: 2em;
+    padding: 4em 2em;
   }
 }
 
@@ -97,6 +103,7 @@
 
 /* Only for tablet in landscape mode */
 @include landscape-tablet {
+
 }
 
 /* Only for phone in landscape mode */
