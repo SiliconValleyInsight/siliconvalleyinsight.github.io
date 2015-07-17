@@ -25,7 +25,7 @@
 #footer {
   bottom: 0;
   left: 0;
-  padding: 2.85em 2.6em 6.9em 2.6em;
+  padding: 2.85em 2.6em 6.7em 2.6em;
   position: fixed;
   text-align: left;
   width: $left-part-width;
@@ -35,7 +35,7 @@
 /* Main part */
 #main {
   margin-left: $left-part-width;
-  padding: 2.85em 0;
+  padding: 3.2em 0;
   width: calc(100% - #{$left-part-width});
   background: rgba($white, 1);
 
