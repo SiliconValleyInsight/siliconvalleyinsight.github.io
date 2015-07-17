@@ -1,10 +1,6 @@
 $(document).ready(function($) {
 
-    // ScrollReveal
-    // window.sr = new scrollReveal();
-    
-    // Arrows / Go top link
-    // Hide go top link
+    /* Uncomment to get "Go to top arrow"
     $(".scroll-top").hide().css("bottom", "-100px");
 
     // Show go top / Hide scroll
@@ -25,6 +21,6 @@ $(document).ready(function($) {
             }, 800);
             return false;
         });
-
     });
+    */
 });
