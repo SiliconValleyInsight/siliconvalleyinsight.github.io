@@ -87,23 +87,24 @@
     }
   }
 
-  #work-inquires > strong {
-    font-size: .6em;
+  #work-inquires {
+    line-height: 1;
+    > strong {
+      font-size: .8em;
+    }
   }
 }
 
 /* Small Devices, Tablets */
 @include tablet {
   #header {
-    background: scroll top left, center center;
-    background-size: auto, cover;
     left: auto;
     position: relative;
     text-align: left;
     top: auto;
     width: 100%;
     max-width: 100%;
-    padding: 4em 2em;
+    padding: 2em 2em 0 2em;
     border-right: none;
 
     h1 {
@@ -113,13 +114,29 @@
         display: inline;
       }
     }
+
+    h2 {
+      position: absolute;
+      bottom: 0;
+      height: 6.82em;
+      padding-right: 2em;
+
+      &:after {
+        content: "Scroll down";
+        display: block;
+        margin-top: 2.5em;
+        font-size: .4em;
+        color: $manatee;
+      }
+    }
   }
 
   #footer {
     bottom: auto;
     left: auto;
     position: relative;
-    padding: 2em 2em;
+    height: auto;
+    padding: 2em 2em 0 2em;
     text-align: left;
     width: 100%;
     max-width: 100%;
@@ -127,59 +144,45 @@
 
   #main {
     margin: 0;
-    padding: 2em 0;
+    padding: 2.85em 0;
     width: 100%;
-    > section {
-      margin: 0;
-      padding: 0 2em;
-    }
   }
 
   #about {
-    ul > li {
-      width: 45%;
-      vertical-align: top;
-      display: inline-block;
-      margin-right: 1em;
-      &:last-child {
-        margin-right: 0;
+    position: relative;
+    height: auto;
+    padding: 0 2em;
+    margin-bottom: 2.85em;
+
+    ul {
+      position: inherit;
+      height: auto;
+
+      > li {
+        width: 45%;
+        vertical-align: top;
+        display: inline-block;
+        margin-right: 1em;
+        height: auto;
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
   }
 
-  #main > #svi-team {
-    margin: 0;
+  #svi-team {
     padding: 2em;
+  }
 
-    ul {
-      > li {
-        margin-right: 1em;
-      }
-    }
-
-    .svi-map-img {
-      height: 4.5em;
-    }
+  #contact-us {
+    padding: 2em;
+    margin-top: 15.65em;
   }
 }
 
-/* Extra Small Devices, Phones */
+/* Phones */
 @include phone {
-  #header {
-    padding: 4em 2em;
-    border-right: none;
-
-    h2 {
-      &:after {
-        content: "Scroll down";
-        display: block;
-        margin-top: 2.5em;
-        font-size: .5em;
-        color: $manatee;
-      }
-    }
-  }
-
   #main {
     padding: 4em 0;
   }
@@ -195,6 +198,21 @@
   //.arrows-part, .scroll-top {
   //  width: 30px;
   //}
+}
+
+/* Extra Small Phones */
+@include phone-small {
+  #header h2 {
+    height: 7.82em;
+  }
+
+  #about ul > li {
+    margin-right: .5em;
+  }
+
+  #contact-us {
+    margin-top: 10em;
+  }
 }
 
 /* Only for tablet in landscape mode */

@@ -44,6 +44,7 @@ $special-phone: 667px;
 $special-tablet: 1024px;
 
 // General Media Queries
+$phone-small-width: 320px;
 $phone-width: 480px;
 $tablet-width: 767px;
 $medium-width: 1023px;
@@ -58,6 +59,12 @@ $desktop-width: 1281px;
 
 @mixin landscape-tablet {
   @media only screen and (max-device-width: $special-tablet) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin phone-small {
+  @media only screen and (max-width: $phone-small-width) {
     @content;
   }
 }
