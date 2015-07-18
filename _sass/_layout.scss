@@ -1,274 +1,165 @@
-$mobile: new-breakpoint(max-width 480px 4);
-$tablet: new-breakpoint(max-width $max-width 12);
-
-body {
-    padding: 0;
-    margin: 0;
+/* Header (Left part) */
+html, body, #main {
+  height: 100%;
 }
 
-// Home
+#header {
+  height: 100%;
+  left: 0;
+  padding: 2.85em 2.6em;
+  position: fixed;
+  text-align: left;
+  top: 0;
+  width: $left-part-width;
+  min-width: $left-part-min-width;
+  border-right: 1px solid $concrete;
 
-.particles {
+  h1, h2, h3, h4, h5, h6, p {
+    position: relative;
+  }
+}
+
+/* Footer */
+#footer {
+  bottom: 0;
+  left: 0;
+  padding: 0 2.6em;
+  height: 15.65em;
+  position: fixed;
+  text-align: left;
+  width: $left-part-width;
+  min-width: $left-part-min-width;
+}
+
+/* Main part */
+#main {
+  margin-left: $left-part-width;
+  width: calc(100% - #{$left-part-width});
+  background: rgba($white, 1);
+}
+
+/* About section */
+#about {
+  height: 100%;
+  margin-bottom: 4.5em;
+
+  ul {
     position: absolute;
-    top: 0;
-    left: 0;
+    bottom: 0;
+    height: 15.65em;
+
+    > li {
+      margin-right: 4.3em;
+      vertical-align: top;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+/* SVI Team section */
+#svi-team {
+  background-color: $picton-blue;
+  padding: 3.57em 5.8em;
+
+  header > h3, p {
+    color: $white;
+  }
+
+  ul {
+    margin-top: 3.9em;
+    text-align: center;
+    > li {
+      width: 25%;
+      margin-right: 1.4em;
+      padding: 0;
+      text-align: left;
+
+      &:first-child {
+        margin-right: .4em;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .svi-map-img {
+    width: 100%;
+    max-width: 9em;
+  }
+}
+
+/* Contacts section */
+#contact-us {
+  margin-top: 15.65em;
+  height: 15.65em;
+
+  #work-inquires {
+    margin-top: 1em;
+
+    strong > a {
+      display: block;
+      line-height: 1em;
+    }
+  }
+
+  #copyright {
+    margin-top: 1em;
+
+    small > span {
+      display: block;
+    }
+  }
+}
+
+/* Scroll Arrows */
+/* Uncomment to get "Scroll to top" functionality
+.scroll-top {
+  @include bezier-transition(all, $fast-transition, cubic-bezier(0.42, 0, 0.58, 1));
+  position: fixed;
+  right: 0;
+  width: 50px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 48px;
+  z-index: 5;
+
+  a {
+    display: block;
     width: 100%;
     height: 100%;
-    z-index: -10;
+    color: $torch-red;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    padding-top: 10px;
+
+    &:hover {
+      color: darken($torch-red, 10%);
+    }
+  }
+
+  &:hover {
+    margin-bottom: 10px;
+  }
+
+  .arrows-bottom {
+    @include rotate(225deg);
+    margin: 0 0 3px 4px;
+  }
 }
 
-@include keyframes (arrow) {
-    to { background-position: -14600px top; }
+.arrows-bottom {
+  display: block;
+  @include rotate(45deg);
+  border-right: 2px solid $torch-red;
+  border-bottom: 2px solid $torch-red;
+  margin: 0 0 3px 4px;
+  width: 16px;
+  height: 16px;
 }
-
-.home {
-
-    header {
-        @include pad;
-        height: 100vh;
-        text-align: center;
-        position: relative;
-        section {
-            @include transform(translate(-50%, -50%));
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            @include media($mobile) {
-                top: 30%;
-            }
-            h1 {
-                font-weight: 200;
-                text-transform: uppercase;
-                line-height: 1;
-                margin-bottom: 1em;
-                letter-spacing: 0.2em;
-                @include media($mobile) {
-                    margin-bottom: 0.5em;
-                }
-            }
-            .locations {
-                letter-spacing: 0.2em;
-                font-weight: 300;
-                @include media($mobile) {
-                    letter-spacing: 0;
-                    font-size: 0.8em;
-                }
-            }
-        }
-        .scroll {
-            @include transform(translate(-50%, -50%));
-            @include animation(arrow steps(73) 3s infinite);
-            position: absolute;
-            top: 90%;
-            left: 50%;
-            width: 200px;
-            height: 200px;
-            //background: url(../images/arrow.png) no-repeat left top;
-            font-family: Muli;
-            text-transform: uppercase;
-            color: $medium-gray;
-            font-size: 0.8em;
-            @include media($mobile) {
-                font-size: 0.6em;
-            }
-        }
-    }
-
-    .tagline {
-        background: url(../images/tagline.png) no-repeat center center;
-        background-size: 800px;
-        height: 800px;
-        position: relative;
-        section {
-            @include transform(translate(-50%, -50%));
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 300px;
-            padding: 1em;
-            background: rgba(255, 255, 255, 0.9);
-            text-align: center;
-            h2 {
-              font-size: 1.5em;
-            }
-        }
-        @include media($mobile) {
-            background-size: 100%;
-            height: 100vh;
-        }
-    }
-
-    .team {
-        background: #333;
-        color: white;
-        padding: 5em 0;
-        .container {
-            @include outer-container;
-            h3 {
-                text-align: center;
-                margin-bottom: 2em;
-                @include media($mobile) {
-                    margin-bottom: 1em;
-                }
-            }
-            .row {
-                @include row;
-            }
-            .row:last-child {
-                border-top: 1px solid $medium-gray;
-                margin-top: 3em;
-                padding-top: 1em;
-                @include media($mobile) {
-                    margin-top: 0;
-                }
-            }
-            section {
-                @include span-columns(4);
-                @include media($tablet) {
-                    @include span-columns(6);
-                    padding: 0 1em;
-                }
-            }
-            #map {
-                @include span-columns(8);
-                position: relative;
-                height: 300px;
-                @include media($tablet) {
-                    height: 200px;
-                }
-                @include media($mobile) {
-                    height: auto;
-                }
-                .label {
-                    background: rgba(0, 0, 0, 0.8);
-                    font-family: $base-font-family;
-                    font-size: 0.9em;
-                    padding: 5px;
-                    line-height: 1;
-                }
-            }
-            .companies {
-                @include span-columns(8);
-                text-align: center;
-                img {
-                    vertical-align: middle;
-                    margin: 0 1em;
-                    @include media($mobile) {
-                        margin: 1em;
-                    }
-                }
-            }
-            @include media($tablet) {
-                #map, .companies {
-                    @include span-columns(6);
-                }
-            }
-            @include media($mobile) {
-                text-align: center;
-                section, #map, .companies {
-                    @include span-columns(4);
-                }
-                section {
-                    padding: 1em;
-                }
-            }
-        }
-        @include media($mobile) {
-            padding: 3em 0;
-        }
-    }
-
-    .specialty {
-        background: url(../images/stanford-gps-mooc.png) no-repeat right bottom;
-        padding-top: 5em;
-        .container {
-            @include outer-container;
-            height: 480px;
-            section {
-                @include span-columns(12);
-                ul {
-                    list-style: square;
-                    padding-left: 1.5em;
-                }
-            }
-            @include media($mobile) {
-                height: 400px;
-            }
-        }
-        @include media($tablet) {
-            padding: 3em;
-            background-position: 1em bottom;
-            background-size: 110%;
-        }
-        @include media($mobile) {
-            padding: 2em;
-            background-position: 1em bottom;
-            background-size: 110%;
-        }
-    }
-
-    .contact {
-        position: relative;
-        height: 100vh;
-        .bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-        .container {
-            @include outer-container;
-            @include transform(translateY(-50%));
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            section {
-                @include span-columns(6);
-                @include shift(3);
-                text-align: center;
-                h2 {
-                    margin-bottom: 0.5em;
-                    u {
-                        text-decoration: none;
-                        border-bottom: 0.1em solid;
-                        padding: 0 0.1em 0.1em 0.1em;
-                        margin: 0 -0.1em;
-                    }
-                    @include media($mobile) {
-                        font-size: 1.3em;
-                        margin-bottom: 0;
-                    }
-                }
-                form {
-                    margin: 3em 0;
-                    .info {
-                        @include row;
-                        div {
-                            @include span-columns(6);
-                        }
-                    }
-                    p {
-                        margin-bottom: 1.5em;
-                        @include media($mobile) {
-                            margin-bottom: 0;
-                        }
-                    }
-                    @include media($mobile) {
-                        margin: 1em 0;
-                    }
-                }
-                @include media($mobile) {
-                    @include span-columns(4);
-                    @include shift(0);
-                    padding: 1em;
-                }
-            }
-            #thanks {
-                display: none;
-            }
-        }
-    }
-}
+*/

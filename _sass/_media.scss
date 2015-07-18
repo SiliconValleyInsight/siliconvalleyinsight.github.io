@@ -1,0 +1,237 @@
+/* Media Queries */
+
+/* 2K devices */
+@include desktop-2k {
+  body, input, select, textarea {
+    font-size: 22pt;
+    line-height: 1.95em;
+  }
+}
+
+/* Large Devices, Wide Screens */
+@include desktop {
+  #about, #contact-us {
+    padding: 0 5.8em;
+  }
+}
+
+/* Notebook devices */
+@include notebook {
+  #header {
+    width: $left-part-min-width;
+  }
+
+  #main {
+    width: calc(100% - #{$left-part-min-width});
+    margin-left: $left-part-min-width;
+  }
+
+  #footer {
+    width: $left-part-min-width;
+  }
+
+  #about, #contact-us {
+    padding: 0 2.85em;
+  }
+
+  #about ul > li {
+    margin-right: 2.85em;
+  }
+
+  #svi-team {
+    padding: 3.57em 2.85em;
+  }
+}
+
+/* Medium Devices */
+@include medium {
+  #header {
+    width: $left-part-half-width;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  #main {
+    width: $left-part-half-width;
+    margin-left: $left-part-half-width;
+  }
+
+  #footer {
+    width: $left-part-half-width;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  // Hacky way to get things aligned
+  // Please consider the changing of this
+  #about {
+    margin-bottom: 24em;
+
+    ul > li {
+      height: 23.6em;
+      margin-right: 0;
+      display: block;
+    }
+  }
+
+  #about, #contact-us {
+    padding: 0 2.85em;
+  }
+
+  #contact-us {
+    margin-top: 3.85em;
+  }
+
+  #svi-team {
+    padding: 3.57em 2.85em;
+    ul > li {
+      width: 30%;
+      margin: 0;
+      &:first-child {
+        margin: 0;
+      }
+      &:last-child {
+        margin-left: .5em;
+      }
+    }
+  }
+
+  #work-inquires {
+    line-height: 1;
+    > strong {
+      font-size: .8em;
+    }
+  }
+}
+
+/* Small Devices, Tablets */
+@include tablet {
+  #header {
+    left: auto;
+    position: relative;
+    text-align: left;
+    top: auto;
+    width: 100%;
+    max-width: 100%;
+    padding: 2em 2em 0 2em;
+    border-right: none;
+
+    h1 {
+      font-size: 2.85em;
+
+      br {
+        display: inline;
+      }
+    }
+
+    h2 {
+      position: absolute;
+      bottom: 0;
+      height: 6.82em;
+      padding-right: 2em;
+
+      &:after {
+        content: "Scroll down";
+        display: block;
+        margin-top: 2.5em;
+        font-size: .4em;
+        color: $manatee;
+      }
+    }
+  }
+
+  #footer {
+    bottom: auto;
+    left: auto;
+    position: relative;
+    height: auto;
+    padding: 2em 2em 0 2em;
+    text-align: left;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #main {
+    margin: 0;
+    padding: 2.85em 0;
+    width: 100%;
+  }
+
+  #about {
+    position: relative;
+    height: auto;
+    padding: 0 2em;
+    margin-bottom: 2.85em;
+
+    ul {
+      position: inherit;
+      height: auto;
+
+      > li {
+        width: 45%;
+        vertical-align: top;
+        display: inline-block;
+        margin-right: 1em;
+        height: auto;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  #svi-team {
+    padding: 2em;
+  }
+
+  #contact-us {
+    padding: 2em;
+    margin-top: 15.65em;
+  }
+}
+
+/* Phones */
+@include phone {
+  #main {
+    padding: 4em 0;
+  }
+
+  #main > #svi-team {
+    padding: 2em;
+
+    .svi-map-img {
+      height: 3.5em;
+    }
+  }
+
+  //.arrows-part, .scroll-top {
+  //  width: 30px;
+  //}
+}
+
+/* Extra Small Phones */
+@include phone-small {
+  #header h2 {
+    height: 7.82em;
+  }
+
+  #about ul > li {
+    margin-right: .5em;
+  }
+
+  #contact-us {
+    margin-top: 10em;
+  }
+}
+
+/* Only for tablet in landscape mode */
+@include landscape-tablet {
+
+}
+
+/* Only for phone in landscape mode */
+@include landscape-phone {
+  #contact-us {
+    margin-top: 2.85em;
+  }
+}

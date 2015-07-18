@@ -1,6 +1,138 @@
 ---
 layout: index
 ---
+
+<header id="header">
+
+  <h1>SVI</h1>
+  <h2>We build software that connects people, content and ideas</h2>
+
+</header>
+
+<footer id="footer">
+  <header>
+    <h3>About Us</h3>
+  </header>
+
+  <p>We are team of multidisciplinary professionals who believe that every creation should make sense and solve a vital task.
+    We craft carefully thought-out UX, crisp design, and smart coding to create elegant products and effective business solutions.</p>
+</footer>
+
+<div id="main">
+
+  <section id="about">
+    <ul class="list-inline">
+
+      <li id="we-do">
+        <header>
+          <h3>What We Do</h3>
+        </header>
+
+        <p>
+          Android Development<br>
+          iOS Development<br>
+          Full Stack Web Development<br>
+          Data Science<br>
+          Interaction Design<br>
+          User Experience Design
+        </p>
+      </li>
+
+      <li id="our-exp">
+        <header>
+          <h3>Our Experience</h3>
+        </header>
+
+        <p>
+          Google<br>
+          Twitter<br>
+          LinkedIn<br>
+          Facebook<br>
+          Wildfire<br>
+          Palantir<br>
+          Samsung
+        </p>
+      </li>
+
+    </ul>
+  </section>
+
+  <section id="svi-team">
+    <div>
+      <header>
+        <h3>SVI Team</h3>
+      </header>
+
+      <div>
+        <p>Founded by Stanford University graduates who brought together their friends from around the world. SVI current spans offices in the Bay Area, Manila, and Kiev. Our global reach and cross continental connections allow us pull together some of the best talent in the world and tackel solutions from a unique multicultural perspective.</p>
+
+          <ul id="svi-cities" class="list-inline">
+            <li>
+              <img class="img-responsive svi-map-img" src="images/Manila.svg" alt="Manila">
+            </li>
+            <li>
+              <img class="img-responsive svi-map-img" src="images/Stanford.svg" alt="Stanford">
+            </li>
+            <li>
+              <img class="img-responsive svi-map-img" src="images/Kiev.svg" alt="Kiev">
+            </li>
+          </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact-us">
+    <div>
+      <header>
+        <h3>Contact Us</h3>
+      </header>
+
+      <p>
+        531 Lasuen Mall, PO Box 12278<br>
+        Stanford, CA 94305<br>
+        <a target="_blank" href="https://www.google.com.ua/maps/place/531+Lasuen+Mall,+Stanford+University,+Stanford,+CA+94305,+USA/@37.4242676,-122.1689023,17z/data=!4m2!3m1!1s0x808fbad41ffa9c4f:0xa7b49b026b13502a">
+          view map
+        </a>
+      </p>
+
+      <div id="work-inquires">
+        <strong>
+          <span>For work inquires please send us an <a href="mailto:siliconvalleyinsight@gmail.com">email</a>.</span>
+        </strong>
+      </div>
+
+      <div id="copyright">
+        <small>
+          <span>Copyright &copy; 2015  Silicon Valley Insight.</span>
+          <span>All rights reserved.</span>
+        </small>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Uncomment to get "Go to top" arrow
+  <div class="scroll-top">
+    <a href="#" class="go-top">
+      <div>
+        <span class="arrows-bottom"></span>
+      </div>
+    </a>
+  </div>
+  -->
+
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Uncomment to get "Go to top" arrow
+<script src="js/SmoothScroll.js"></script>
+-->
+<script src="js/jquery-scrolltofixed-min.js"></script>
+<script src="js/main.js"></script>
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -9,159 +141,4 @@ layout: index
 
   ga('create', 'UA-59726232-1', 'auto');
   ga('send', 'pageview');
-
 </script>
-
-<header>
-  <div class="particles"></div>
-  <section>
-    <h1>{{ site.title }}</h1>
-    <p class="locations">
-        Android | iOS | Web | Data Science
-    </p>
-  </section>
-  <div class="scroll">
-    Scroll down
-  </div>
-</header>
-
-<div class="content">
-
-<div class="tagline" id="tagline-anchor">
-  <section>
-    <h2>
-      We build beautiful native mobile apps, effective web platforms and, and insightful data solutions.
-    </h2>
-  </section>
-</div>
-
-<div class="team">
-  <div class="container">
-    <h3>Our Team</h3>
-    <div class="row">
-      <div id="map"></div>
-      <section>
-        <p>We're a globally distributed team of Android devs, iOS devs, web devs, interaction designers, and data
-        scientists.</p>
-      </section>
-    </div>
-    <div class="row">
-      <section>
-        <p>We've worked at Google, Twitter, Wildfire, Samsung, and at some of the
-        most interesting startups in the U.S., Asia, and Europe.</p>
-      </section>
-      <div class="companies">
-        <img src="images/google.png" width="150" alt="Google">
-        <img src="images/wildfire.png" width="150" alt="Wildfire">
-        <img src="images/linkedin.png" width="150" alt="LinkedIn">
-        <img src="images/twitter.png" width="75" alt="Twitter">
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- 
-<div class="specialty">
-  <div class="container">
-    <section>
-      <h3>Our Specialties</h3>
-      <p>We're particularly good at</p>
-      <ul>
-        <li>Android & iOS Development</li>
-        <li>Highly Interactive Web Apps</li>
-        <li>Data Science & Data Viz</li>
-      </ul>
-    </section>
-  </div>
-</div>
--->
-<div class="contact">
-  <div class="container">
-    <section id="form">
-      <h2>What can we build for <u>you</u>?</h2>
-      <form action="https://formic.marksteve.com/s/c66b7e4c" method="post">
-        <div class="info">
-          <div><input type="text" name="name" placeholder="Name"></div>
-          <div><input type="email" name="email" placeholder="Email"></div>
-        </div>
-        <p><input type="text" name="company" placeholder="Company">
-        <p><textarea name="message" placeholder="How can we help?" rows="5"></textarea></p>
-        <p><button type="submit">Start a Conversation</button></p>
-      </form>
-    </section>
-    <section id="thanks">
-      <h2>Thank you!</h2>
-      <p>We'll get back to you in the next 48 hours!</p>
-    </section>
-  </div>
-</div>
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="{{ site.baseurl }}/js/jquery.particleground.min.js"></script>
-<script>
-  $('.particles').particleground({
-    dotColor: '#eee',
-    lineColor: '#f9f9f9'
-  });
-</script>
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-<script src="{{ site.baseurl }}/js/datamaps.world.min.js"></script>
-<script>
-  var map = new Datamap({
-    element: document.getElementById('map'),
-    responsive: true,
-    geographyConfig: {
-      popupOnHover: false,
-      highlightOnHover: false,
-      borderColor: '#333',
-    },
-    fills: {
-      svi: '#fff',
-      defaultFill: '#ccc'
-    }
-  });
-  /*
-  map.bubbles([
-    {
-      city: "Palo Alto, California",
-      fillKey: 'svi',
-      latitude: 37.4292,
-      longitude: -122.1381,
-      radius: 10
-    },
-    {
-      city: "Manila, Philippines",
-      fillKey: 'svi',
-      latitude: 14.5833,
-      longitude: 120.9667,
-      radius: 10
-    },
-    {
-      city: "Kiev, Ukraine",
-      fillKey: 'svi',
-      latitude: 50.45,
-      longitude: 30.5233,
-      radius: 10
-    }
-  ], {
-    fillOpacity: 0.2,
-    highlightFillColor: 'white',
-    highlightFillOpacity: 0.6,
-    highlightBorderWidth: 0,
-    popupTemplate: function(geo, data) {
-      return '<div class="label">' + data.city + '</div>';
-    }
-  });
-  */
-</script>
-
-<script>
-  if (location.hash.substr(1) === 'thanks') {
-    document.getElementById('form').remove();
-    document.getElementById('thanks').style.display = 'block';
-  }
-</script>
-
-</div>
