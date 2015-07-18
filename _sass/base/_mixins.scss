@@ -50,6 +50,7 @@ $tablet-width: 767px;
 $medium-width: 1023px;
 $notebook-width: 1280px;
 $desktop-width: 1281px;
+$desktop-2k-width: 2560px;
 
 @mixin landscape-phone {
   @media screen and (max-device-width: $special-phone) and (orientation: landscape) {
@@ -95,6 +96,12 @@ $desktop-width: 1281px;
 
 @mixin desktop {
   @media only screen and (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+@mixin desktop-2k {
+  @media only screen and (min-width: $desktop-2k-width) {
     @content;
   }
 }

@@ -1,4 +1,13 @@
 /* Media Queries */
+
+/* 2K devices */
+@include desktop-2k {
+  body, input, select, textarea {
+    font-size: 22pt;
+    line-height: 1.95em;
+  }
+}
+
 /* Large Devices, Wide Screens */
 @include desktop {
   #about, #contact-us {
