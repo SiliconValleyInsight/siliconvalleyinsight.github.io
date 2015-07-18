@@ -1,11 +1,22 @@
 $(document).ready(function($) {
 
     var $sviTeam = $('#svi-team'),
-        $sviCities = $('#svi-cities');
+        $sviCities = $('#svi-cities'),
+        landscapePhone = '(max-device-width: 800px) and (orientation: landscape)',
+        isLandPhone = Modernizr.mq(landscapePhone);
+
+    $(window).bind('resize', function() {
+        isLandPhone = Modernizr.mq(landscapePhone);
+    });
 
     $sviTeam.scrollToFixed({
         marginTop: function() {
             var marginTop = $sviCities.height() - $sviTeam.height();
+
+            if (isLandPhone) {
+                marginTop = -$sviTeam.outerHeight(true);
+            }
+
             return marginTop >= 0 ? 0 : marginTop;
         }
     });
