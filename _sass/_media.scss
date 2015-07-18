@@ -36,21 +36,8 @@
   #main > #svi-team {
     padding: 2.85em;
 
-    ul {
-      > li {
-        margin: 0;
-        padding: 0;
-        &:first-child {
-          margin: 0;
-        }
-        &:last-child {
-          margin-left: 0.57em;
-        }
-      }
-    }
-
     .svi-map-img {
-      height: 5.5em;
+      height: 4.5em;
     }
   }
 }
@@ -91,19 +78,12 @@
 
     ul {
       > li {
-        margin: 0;
-        padding: 0;
-        &:first-child {
-          margin: 0;
-        }
-        &:last-child {
-          margin-left: 0.57em;
-        }
+        margin-right: .5em;
       }
     }
 
     .svi-map-img {
-      height: 3.5em;
+      height: 3em;
     }
   }
 
@@ -176,17 +156,12 @@
 
     ul {
       > li {
-        &:first-child {
-          margin: 0;
-        }
-        &:last-child {
-          margin-left: 0.57em;
-        }
+        margin-right: 1em;
       }
     }
 
     .svi-map-img {
-      height: 5em;
+      height: 4.5em;
     }
   }
 }
