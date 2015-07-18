@@ -79,11 +79,14 @@
     ul {
       > li {
         margin-right: .5em;
+        &:first-child {
+          margin-right: 0;
+        }
       }
     }
 
     .svi-map-img {
-      height: 3em;
+      height: 3.5em;
     }
   }
 
