@@ -222,4 +222,7 @@
 
 /* Only for phone in landscape mode */
 @include landscape-phone {
+  #contact-us {
+    margin-top: 2.85em;
+  }
 }
