@@ -40,17 +40,26 @@ html, body, #main {
 
 /* About section */
 #about {
-  ul > li {
-    margin-right: 4.3em;
-    vertical-align: top;
-    &:last-child {
-      margin-right: 0;
+  height: 100%;
+  margin-bottom: 4.5em;
+
+  ul {
+    position: absolute;
+    bottom: 0;
+    height: 15.65em;
+
+    > li {
+      margin-right: 4.3em;
+      vertical-align: top;
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 }
 
 /* SVI Team section */
-#main > #svi-team {
+#svi-team {
   background-color: $picton-blue;
   padding: 3.57em 5.8em;
 
@@ -85,6 +94,8 @@ html, body, #main {
 
 /* Contacts section */
 #contact-us {
+  margin-top: 15.65em;
+  height: 15.65em;
 
   #work-inquires {
     margin-top: 1em;

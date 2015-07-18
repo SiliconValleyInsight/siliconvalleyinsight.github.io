@@ -4,21 +4,6 @@
   #about, #contact-us {
     padding: 0 5.8em;
   }
-
-  #about {
-    height: 100%;
-    margin-bottom: 4.5em;
-    > ul {
-      position: absolute;
-      bottom: 0;
-      height: 15.65em;
-    }
-  }
-
-  #contact-us {
-    margin-top: 15.65em;
-    height: 15.65em;
-  }
 }
 
 /* Notebook devices */
@@ -30,28 +15,22 @@
   #main {
     width: calc(100% - #{$left-part-min-width});
     margin-left: $left-part-min-width;
-    padding: 3.2em 0;
-    > section {
-      margin: 4em 0 4em 2.85em;
-    }
   }
 
   #footer {
     width: $left-part-min-width;
   }
 
-  #about {
-    ul > li {
-      margin-right: 3.3em;
-    }
+  #about, #contact-us {
+    padding: 0 2.85em;
   }
 
-  #main > #svi-team {
-    padding: 2.85em;
+  #about ul > li {
+    margin-right: 2.85em;
+  }
 
-    .svi-map-img {
-      height: 4.5em;
-    }
+  #svi-team {
+    padding: 3.57em 2.85em;
   }
 }
 
