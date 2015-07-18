@@ -1,10 +1,23 @@
 /* Media Queries */
 /* Large Devices, Wide Screens */
 @include desktop {
-  #main > #svi-team {
-    .svi-map-img {
-      height: 6em;
+  #about, #contact-us {
+    padding: 0 5.8em;
+  }
+
+  #about {
+    height: 100%;
+    margin-bottom: 4.5em;
+    > ul {
+      position: absolute;
+      bottom: 0;
+      height: 15.65em;
     }
+  }
+
+  #contact-us {
+    margin-top: 15.65em;
+    height: 15.65em;
   }
 }
 
@@ -194,7 +207,7 @@
     padding: 2em;
 
     .svi-map-img {
-      height: 4em;
+      height: 3.5em;
     }
   }
 

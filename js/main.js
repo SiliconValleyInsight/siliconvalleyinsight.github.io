@@ -1,5 +1,15 @@
 $(document).ready(function($) {
 
+    var $sviTeam = $('#svi-team'),
+        $sviCities = $('#svi-cities');
+
+    $sviTeam.scrollToFixed({
+        marginTop: function() {
+            var marginTop = $sviCities.height() - $sviTeam.height();
+            return marginTop >= 0 ? 0 : marginTop;
+        }
+    });
+
     /* Uncomment to get "Go to top arrow"
     $(".scroll-top").hide().css("bottom", "-100px");
 

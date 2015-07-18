@@ -1,4 +1,8 @@
 /* Header (Left part) */
+html, body, #main {
+  height: 100%;
+}
+
 #header {
   height: 100%;
   left: 0;
@@ -10,12 +14,7 @@
   min-width: $left-part-min-width;
   border-right: 1px solid $concrete;
 
-  h1 {
-    line-height: 1;
-    position: relative;
-  }
-
-  h2, h3, h4, h5, h6, p {
+  h1, h2, h3, h4, h5, h6, p {
     position: relative;
   }
 }
@@ -24,7 +23,8 @@
 #footer {
   bottom: 0;
   left: 0;
-  padding: 2.85em 2.6em 6.7em 2.6em;
+  padding: 0 2.6em;
+  height: 15.65em;
   position: fixed;
   text-align: left;
   width: $left-part-width;
@@ -34,20 +34,8 @@
 /* Main part */
 #main {
   margin-left: $left-part-width;
-  padding: 3.2em 0;
   width: calc(100% - #{$left-part-width});
   background: rgba($white, 1);
-
-  > section {
-    margin: 4em 0 0 5.8em;
-    padding: 4em 0 0 0;
-
-    &:first-child {
-      border-top: 0;
-      margin-top: 0;
-      padding-top: 0;
-    }
-  }
 }
 
 /* About section */
@@ -64,7 +52,6 @@
 /* SVI Team section */
 #main > #svi-team {
   background-color: $picton-blue;
-  margin: 8em 0 0 0;
   padding: 3.57em 5.8em;
 
   header > h3, p {
@@ -75,6 +62,7 @@
     margin-top: 3.9em;
     text-align: center;
     > li {
+      width: 25%;
       margin-right: 1.4em;
       padding: 0;
       text-align: left;
@@ -90,7 +78,8 @@
   }
 
   .svi-map-img {
-    height: 8em;
+    width: 100%;
+    max-width: 9em;
   }
 }
 
@@ -98,7 +87,7 @@
 #contact-us {
 
   #work-inquires {
-    margin-top: 2.38em;
+    margin-top: 1em;
 
     strong > a {
       display: block;
@@ -107,7 +96,7 @@
   }
 
   #copyright {
-    margin-top: 2.38em;
+    margin-top: 1em;
 
     small > span {
       display: block;
