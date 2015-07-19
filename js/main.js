@@ -2,18 +2,13 @@ $(document).ready(function($) {
 
     var $sviTeam = $('#svi-team'),
         $sviCities = $('#svi-cities'),
-        landscapePhone = '(max-device-width: 800px) and (orientation: landscape)',
-        isLandPhone = Modernizr.mq(landscapePhone);
-
-    $(window).bind('resize', function() {
-        isLandPhone = Modernizr.mq(landscapePhone);
-    });
+        landscapePhone = '(max-device-width: 800px) and (orientation: landscape)';
 
     $sviTeam.scrollToFixed({
         marginTop: function() {
             var marginTop = $sviCities.height() - $sviTeam.height();
 
-            if (isLandPhone) {
+            if (Modernizr.mq(landscapePhone)) {
                 marginTop = -$sviTeam.outerHeight(true);
             }
 
