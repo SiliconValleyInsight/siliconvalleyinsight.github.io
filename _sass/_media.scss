@@ -1,10 +1,25 @@
 /* Media Queries */
 
-/* 2K devices */
-@include desktop-2k {
+/* 1080p devices */
+@include desktop-hd {
   body, input, select, textarea {
-    font-size: 22pt;
+    font-size: 18pt;
+  }
+}
+
+/* WQHD devices */
+@include desktop-wqhd {
+  body, input, select, textarea {
+    font-size: 24pt;
     line-height: 1.95em;
+  }
+}
+
+/* 4k devices */
+@include desktop-4k {
+  body, input, select, textarea {
+    font-size: 34pt;
+    line-height: 2.2em;
   }
 }
 
@@ -68,7 +83,7 @@
     margin-bottom: 24em;
 
     ul > li {
-      height: 23.6em;
+      height: 18.6em;
       margin-right: 0;
       display: block;
     }
@@ -186,7 +201,6 @@
 
   #contact-us {
     padding: 2em;
-    margin-top: 15.65em;
   }
 }
 
@@ -220,7 +234,7 @@
   }
 
   #contact-us {
-    margin-top: 10em;
+    margin-top: 2.85em;
   }
 }
 
