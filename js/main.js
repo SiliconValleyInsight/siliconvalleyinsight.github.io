@@ -1,42 +1,11 @@
-$(document).ready(function($) {
+(function ($) {
 
-    var $sviTeam = $('#svi-team'),
-        $sviCities = $('#svi-cities'),
-        landscapePhone = '(max-device-width: 800px) and (orientation: landscape)';
+    var viewport = $('#viewport');
 
-    $sviTeam.scrollToFixed({
-        marginTop: function() {
-            var marginTop = $sviCities.height() - $sviTeam.height();
+    // Disable zooming on iPad
+    if (Modernizr.mq('(max-width: 1024px) and (min-width: 768px)')) {
+        viewport.attr('content',
+            'width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1');
+    }
 
-            if (Modernizr.mq(landscapePhone)) {
-                marginTop = -$sviTeam.outerHeight(true);
-            }
-
-            return marginTop >= 0 ? 0 : marginTop;
-        }
-    });
-
-    /* Uncomment to get "Go to top arrow"
-    $(".scroll-top").hide().css("bottom", "-100px");
-
-    // Show go top / Hide scroll
-    $(function () {
-
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > 250) {
-                $('.scroll-top').fadeIn().css("bottom", "0");
-            } else {
-                $('.scroll-top').fadeOut().css("bottom", "-100px");
-            }
-        });
-
-        // Click go top
-        $('a.go-top').click(function () {
-            $('body,html').animate({
-                scrollTop: 0
-            }, 800);
-            return false;
-        });
-    });
-    */
-});
+}(jQuery));
