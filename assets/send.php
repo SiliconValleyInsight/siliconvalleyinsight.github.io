@@ -1,0 +1,73 @@
+<?php
+	$emailme = 'siliconvalleyinsight@gmail.com'; //siliconvalleyinsight@gmail.com
+if ($_POST) { // если передан массив POST
+	$name = htmlspecialchars($_POST["your-name"]);
+	$email = htmlspecialchars($_POST["your-email"]);
+	$tel = htmlspecialchars($_POST["your-phone"]);
+	$message = htmlspecialchars($_POST["your-message"]);
+
+
+	$json = array(); 
+	if (!$name or !$tel or !$email or !$message) { 
+		$json['error'] = 'Some Fields are empty'; 
+		echo json_encode($json);  
+		die(); 
+	}
+
+	function mime_header_encode($str, $data_charset, $send_charset) { 
+		if($data_charset != $send_charset)
+		$str=iconv($data_charset,$send_charset.'//IGNORE',$str);
+		return ('=?'.$send_charset.'?B?'.base64_encode($str).'?=');
+	}
+
+	class TEmail {
+	public $from_email;
+	public $from_name;
+	public $to_email;
+	public $to_name;
+	public $subject;
+	public $data_charset='UTF-8';
+	public $send_charset='UTF-8';
+	public $body='';
+	public $type='text/plain';
+
+	function send(){
+		$dc=$this->data_charset;
+		$sc=$this->send_charset;
+		$enc_to=mime_header_encode($this->to_name,$dc,$sc).' <'.$this->to_email.'>';
+		$enc_subject=mime_header_encode($this->subject,$dc,$sc);
+		$enc_from=mime_header_encode($this->from_name,$dc,$sc).' <'.$this->from_email.'>';
+		$enc_body=$dc==$sc?$this->body:iconv($dc,$sc.'//IGNORE',$this->body);
+		$headers='';
+		$headers.="Mime-Version: 1.0\r\n";
+		$headers.="Content-type: ".$this->type."; charset=".$sc."\r\n";
+		$headers.="From: ".$enc_from."\r\n";
+		$headers .= "Bcc: "; //  
+		return mail($enc_to,$enc_subject,$enc_body,$headers);
+	}
+
+	}
+
+	if($_POST['target']){
+		$message = "Name: ".$name."\r\nPhone: ".$tel."\r\n"."Email: ".$email."\r\n"."Message: ".$message."\r\n--\r\nSend from page:".$_POST['target'];
+	}else{
+		$message = "Name: ".$name."\r\nPhone: ".$tel."\r\n"."Email: ".$email."\r\n"."Message: ".$message."\r\n";
+	}
+	
+
+	$emailgo= new TEmail; 
+	$emailgo->from_email= 'noreply@siliconvalleyinsight.com/'; 
+	$emailgo->from_name= 'SVI';
+	$emailgo->to_email= $emailme; 
+	$emailgo->to_name= $name;
+	$emailgo->subject= 'Message from site SVI.com'; 
+	$emailgo->body= $message; 
+	$emailgo->send(); 
+
+	$json['error'] = 0; 
+
+	echo json_encode($json); 
+} else { 
+	echo 'LOST!'; 
+}
+?>
