@@ -536,6 +536,7 @@ body{
   font-size: 16px;
   -webkit-font-smoothing: subpixel-antialiased;
   font-smoothing: subpixel-antialiased;
+  min-width: 1050px;
 }
 
 
@@ -1039,6 +1040,7 @@ section, .role-section{
   vertical-align: top;
   text-align: justify;
   margin-right: 55px;
+  margin-bottom: 30px
 }
 .samsung-logo{
   background: url('images/samsung.svg') no-repeat center;
