@@ -504,11 +504,11 @@ th {
 /**
  * SVI General Styles.
  */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, 
-a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, 
-strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, 
-label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, 
-details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, 
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small,
+strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form,
+label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section,
 summary, time, mark, audio, video{
   margin: 0;
   padding: 0;
@@ -636,14 +636,14 @@ section, .role-section{
   margin: 0px auto;
   height: 100%;
   padding: 0 40px;
-  
+
 }
 .global-nav__fixed .global-nav__inner{
   /*max-width: calc(100% - 80px);*/
 }
 .gn-nav__list{
   float: left;
-      
+
 }
 .gn-nav__list--item{
   position: relative;
@@ -724,12 +724,12 @@ section, .role-section{
   box-shadow: inset 0px 0px 0px 0px #666;
 }
 .gn-nav__btn.btn-blue{
-  background: #61b5e9;
-  box-shadow: inset 0px 0px 0px 40px #55ace1;
+  background: #9B1E1B;
+  box-shadow: inset 0px 0px 0px 40px #9B1E1B;
 }
 .gn-nav__btn.btn-blue:hover{
-  background: #61b5e9;
-  box-shadow: inset 0px 0px 0px 0px #55ace1;
+  background: #B72623;
+  box-shadow: inset 0px 0px 0px 0px #B72623;
 }
 
 .gn-nav__mobile-only{ /*======================================================================================*/
@@ -784,19 +784,19 @@ section, .role-section{
     -ms-transform: skew(-18deg, 0deg);
 
     animation:SVILogocolorChange 8s;
-    -moz-animation:SVILogocolorChange 8s infinite; 
+    -moz-animation:SVILogocolorChange 8s infinite;
     -webkit-animation:SVILogocolorChange 8s infinite;
 }
 
-@-moz-keyframes SVILogocolorChange 
+@-moz-keyframes SVILogocolorChange
 {
 0%   {background:#ef3737;}
 33%  {background:#4f5194;}
 66%   {background:#55ace1;}
 100% {background:#ef3737;}
 }
- 
-    @-webkit-keyframes SVILogocolorChange 
+
+    @-webkit-keyframes SVILogocolorChange
 {
 0%   {background:#ef3737;}
 33%  {background:#4f5194;}
@@ -1056,7 +1056,7 @@ section, .role-section{
   background: url('images/linkedin.svg') no-repeat center;
   width: 164px;
   height: 48px;
-  
+
 }
 .facebook-logo{
   background: url('images/facebook.svg') no-repeat center;
@@ -1184,6 +1184,11 @@ section, .role-section{
 .blue-bg{
   background: #55ace1;
 }
+
+.darkgrey-bg{
+  background: #2D2D2D;
+}
+
 .cities-shapes--holder{
   width: 100%;
   float: left;
@@ -1512,7 +1517,7 @@ section, .role-section{
   margin-top: 100px
 }
 .featuredin-section{
-  
+
 }
 .press-logos--wrap{
   margin-top: 34px;
@@ -1587,8 +1592,8 @@ p.with-image-on-right{
 }
 .bottom-dir .quote-author{
   padding-left: 25px;
-  margin-top: 24px!important; 
-} 
+  margin-top: 24px!important;
+}
 .half{
   width: 47%;
 }
@@ -1598,7 +1603,7 @@ p.with-image-on-right{
     height: 529px;
     background-size: 100%;
     margin-left: -18px;
-    margin-top: -150px; 
+    margin-top: -150px;
     margin-bottom: 0px;
 }
 
@@ -1608,7 +1613,7 @@ p.with-image-on-right{
     height: 529px;
     background-size: 100%;
     margin-left: -18px;
-    margin-top: -150px; 
+    margin-top: -150px;
 }
 
 .blog-post-inner{
@@ -1645,7 +1650,7 @@ p.with-image-on-right{
 .blog-content-img{
   max-width: 100%;
   height: auto;
-  margin: 20px 0 40px; 
+  margin: 20px 0 40px;
 }
 .blog-post-inner-content .section__inner p{
   margin-bottom: 20px;
@@ -1713,7 +1718,7 @@ p.with-image-on-right{
     background: url('../work/vurb/vurb-smart-search@2x.png') no-repeat;
     width: 486px;
     height: 529px;
-    background-size: 100%; 
+    background-size: 100%;
     background-size: 100%;
     max-width: calc(100% + 36px);
     margin-top: 64px;
@@ -1993,12 +1998,12 @@ body.overflow{
     background: rgba(255,255,255,.95);
     position: absolute;
     height: 100%;
-    overflow-x: hidden;   
+    overflow-x: hidden;
   }
   .global-nav__inner .gn-nav__list.open {
     display: block;
     position: absolute;
-    
+
     top: 0px;
     left: 0px;
     right: 0px;
@@ -2050,16 +2055,8 @@ body.overflow{
   .blog-post-inner-content {
     width: 100%;
   }
-  
+
 }
 .morphext > .animated {
     display: inline-block;
 }
-
-
-
-
-
-
-
-
